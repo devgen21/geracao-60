@@ -18,12 +18,12 @@ public class Theme {
 	private long id;
 	
 	@NotNull
-	@Size(min = 10, max = 100)
+	@Size(min = 2, max = 20)
 	@JoinColumn(name = "Título")
 	private String title;
 	
 	@NotNull
-	@Size(min = 10, max = 100)
+	@Size(min = 10, max = 40)
 	@JoinColumn(name = "Descrição")
 	private String description;
 	
