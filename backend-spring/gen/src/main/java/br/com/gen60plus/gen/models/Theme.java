@@ -27,11 +27,17 @@ public class Theme {
 	@JoinColumn(name = "Descrição")
 	private String description;
 	
+	@NotNull
+	@Size(min = 2, max = 10)
+	@JoinColumn(name = "Hashtags")
+	private String hashtags;
+	
 	/*
 	 * @OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
 		@JsonIgnoreProperties("theme")
 		private List<Post> post;
 	 */
+
 
 	public long getId() {
 		return id;
@@ -55,6 +61,14 @@ public class Theme {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String getHashtags() {
+		return hashtags;
+	}
+
+	public void setHashtags(String hashtags) {
+		this.hashtags = hashtags;
 	}
 		
 	
