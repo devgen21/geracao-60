@@ -17,18 +17,18 @@ public class Theme {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
-	@Size(min = 2, max = 20)
+	@NotNull(message = "Titulo nao pode estar vazio")
+	@Size(min = 2, max = 20, message = "Minimo 2 caracteres maximo 20")
 	@JoinColumn(name = "Título")
 	private String title;
 	
-	@NotNull
-	@Size(min = 10, max = 40)
+	@NotNull(message = "Descricao nao pode estar vazio")
+	@Size(min = 10, max = 40, message = "Minimo 10 caracteres maximo 40")
 	@JoinColumn(name = "Descrição")
 	private String description;
 	
-	@NotNull
-	@Size(min = 2, max = 10)
+	@NotNull(message = "Hashtags nao pode estar vazio")
+	@Size(min = 2, max = 10, message = "Minimo 2 caracteres maximo 10")
 	@JoinColumn(name = "Hashtags")
 	private String hashtags;
 	
