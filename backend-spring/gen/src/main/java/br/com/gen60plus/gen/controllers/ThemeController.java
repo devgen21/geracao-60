@@ -42,19 +42,19 @@ public class ThemeController {
 					.notFound().build());
 	}
 	
-	@GetMapping("/titulo /{titulo}")
-	public ResponseEntity<List<Theme>> GetByTituloTheme(@PathVariable String title){
+	@GetMapping("/title/{title}")
+	public ResponseEntity<List<Theme>> GetByTitleTheme(@PathVariable String title){
 		return ResponseEntity.ok(repository.findAllByTitleContainingIgnoreCase(title));
 	}
 	
-	@GetMapping("/descrição /{descrição}")
-	public ResponseEntity<List<Theme>> GetByDescricaoTheme(@PathVariable String description){
-		return ResponseEntity.ok(repository.findAllByTitleContainingIgnoreCase(description));
+	@GetMapping("/description/{description}")
+	public ResponseEntity<List<Theme>> GetByDescriptionTheme(@PathVariable String description){
+		return ResponseEntity.ok(repository.findAllByDescriptionContainingIgnoreCase(description));
 	}
 	
-	@GetMapping("/hashtags /{hashtags}")
+	@GetMapping("/hashtags/{hashtags}")
 	public ResponseEntity<List<Theme>> GetByHashtagsTheme(@PathVariable String hashtags){
-		return ResponseEntity.ok(repository.findAllByTitleContainingIgnoreCase(hashtags));
+		return ResponseEntity.ok(repository.findAllByHashtagsContainingIgnoreCase(hashtags));
 	}
 	
 	@PostMapping
