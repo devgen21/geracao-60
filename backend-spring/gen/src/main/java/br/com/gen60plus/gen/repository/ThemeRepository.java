@@ -9,5 +9,8 @@ import br.com.gen60plus.gen.models.Theme;
 
 @Repository
 public interface ThemeRepository extends JpaRepository <Theme, Long>{
+	public List<Theme> findAllByDescriptionContainingIgnoreCase(String description);
 	public List<Theme> findAllByTitleContainingIgnoreCase(String title);
+	public List<Theme> findAllByHashtagsContainingIgnoreCase(String hashtags);
 }
+
