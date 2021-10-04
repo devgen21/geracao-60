@@ -28,7 +28,7 @@ public class Theme {
 	private String description;
 	
 	@NotNull(message = "Hashtags nao pode estar vazio")
-	@Size(min = 2, max = 10, message = "Minimo 2 caracteres maximo 10")
+	@Size(min = 2, max = 40, message = "Minimo 2 caracteres maximo 10")
 	@JoinColumn(name = "Hashtags")
 	private String hashtags;
 	
