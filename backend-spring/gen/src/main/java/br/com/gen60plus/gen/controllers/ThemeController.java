@@ -47,6 +47,11 @@ public class ThemeController {
 		return ResponseEntity.ok(repository.findAllByTitleContainingIgnoreCase(title));
 	}
 	
+	@GetMapping("/descrição /{descrição}")
+	public ResponseEntity<List<Theme>> GetByDescricaoTheme(@PathVariable String description){
+		return ResponseEntity.ok(repository.findAllByTitleContainingIgnoreCase(description));
+	}
+	
 	@GetMapping("/hashtags /{hashtags}")
 	public ResponseEntity<List<Theme>> GetByHashtagsTheme(@PathVariable String hashtags){
 		return ResponseEntity.ok(repository.findAllByTitleContainingIgnoreCase(hashtags));
