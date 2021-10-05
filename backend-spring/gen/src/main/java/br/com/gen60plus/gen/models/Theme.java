@@ -1,13 +1,19 @@
 package br.com.gen60plus.gen.models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table (name = "tb_theme")
@@ -32,11 +38,11 @@ public class Theme {
 	@JoinColumn(name = "Hashtags")
 	private String hashtags;
 	
-	/*
-	 * @OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
-		@JsonIgnoreProperties("theme")
-		private List<Post> post;
-	 */
+	
+	 @OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
+	 @JsonIgnoreProperties("theme")
+	 private List<Post> post;
+	 
 
 
 	public long getId() {
