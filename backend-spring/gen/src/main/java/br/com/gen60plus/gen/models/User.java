@@ -40,10 +40,11 @@ public class User {
 	private String email;
 
 
-	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	 @JsonIgnoreProperties("user")
+	 @OneToMany(mappedBy = "user")
+	 @JsonIgnoreProperties("tb_user")
 	 private List<Post> post;
 
+	
 	public long getId() {
 		return id;
 	}
@@ -75,5 +76,6 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	
 }
