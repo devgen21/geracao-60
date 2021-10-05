@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -34,15 +35,15 @@ public class User {
 	private String password;
 	
 	@NotNull(message = "Email nao pode estar vazio")
-	@Size(min = 30, max = 200, message = "Minimo 30 caracteres maximo 200")
+	@Size(min = 8, max = 200, message = "Minimo 8 caracteres maximo 200")
 	@Column(name = "Email")
 	private String email;
 
+
 	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	 @JsonIgnoreProperties("user")
+	 @JsonIgnoreProperties("tb_user")
 	 private List<Post> post;
 
-	
 	public long getId() {
 		return id;
 	}
