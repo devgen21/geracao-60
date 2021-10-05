@@ -3,6 +3,7 @@ package br.com.gen60plus.gen.models;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,23 +26,22 @@ public class Theme {
 	
 	@NotNull(message = "Titulo nao pode estar vazio")
 	@Size(min = 2, max = 20, message = "Minimo 2 caracteres maximo 20")
-	@JoinColumn(name = "Título")
+	@Column(name = "Título")
 	private String title;
 	
 	@NotNull(message = "Descricao nao pode estar vazio")
 	@Size(min = 10, max = 40, message = "Minimo 10 caracteres maximo 40")
-	@JoinColumn(name = "Descrição")
+	@Column(name = "Descrição")
 	private String description;
 	
 	@NotNull(message = "Hashtags nao pode estar vazio")
 	@Size(min = 2, max = 40, message = "Minimo 2 caracteres maximo 10")
-	@JoinColumn(name = "Hashtags")
+	@Column(name = "Hashtags")
 	private String hashtags;
-	
-	
-	 @OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
-	 @JsonIgnoreProperties("theme")
-	 private List<Post> post;
+
+	@OneToMany(mappedBy = "theme", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("theme")
+	private List<Post> post;
 	 
 
 
@@ -76,6 +76,8 @@ public class Theme {
 	public void setHashtags(String hashtags) {
 		this.hashtags = hashtags;
 	}
+	
+	
 		
 	
 }
