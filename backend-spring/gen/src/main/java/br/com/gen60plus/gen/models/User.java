@@ -1,13 +1,19 @@
 package br.com.gen60plus.gen.models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_user")
@@ -31,6 +37,10 @@ public class User {
 	@Size(min = 30, max = 200, message = "Minimo 30 caracteres maximo 200")
 	@Column(name = "Email")
 	private String email;
+
+	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	 @JsonIgnoreProperties("user")
+	 private List<Post> post;
 
 	
 	public long getId() {
