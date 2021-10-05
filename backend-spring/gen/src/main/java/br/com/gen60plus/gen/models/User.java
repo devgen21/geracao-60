@@ -41,7 +41,7 @@ public class User {
 
 
 	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	 @JsonIgnoreProperties("tb_user")
+	 @JsonIgnoreProperties("user")
 	 private List<Post> post;
 
 	public long getId() {
