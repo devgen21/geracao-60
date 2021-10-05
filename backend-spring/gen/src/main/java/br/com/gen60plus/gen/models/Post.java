@@ -1,6 +1,7 @@
 package br.com.gen60plus.gen.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -51,6 +52,11 @@ public class Post {
 	@JsonIgnoreProperties("tb_post")
 	@JoinColumn(name = "theme_id")
 	private Theme theme;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("tb_post")
+	@JoinColumn(name = "user_id")
+	private User user;
 
 	
 	public long getId() {
