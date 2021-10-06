@@ -24,36 +24,38 @@ import br.com.gen60plus.gen.repository.UserRepository;
 public class UserController {
 	
 	@Autowired
-	private UserRepository repository;
+	private UserRepository userRepository;
 	
-	@GetMapping
-	public ResponseEntity <List<User>> GetAll (){
-		return ResponseEntity.ok(repository.findAll());
-	}
+	
+    @GetMapping
+    public ResponseEntity<List<User>> GetAll(){
+        return ResponseEntity.ok(userRepository.findAll());
+    }
+    
 	@GetMapping("/{id}")
 	public ResponseEntity<User> GetById (@PathVariable long id){
-		return repository.findById(id)
+		return userRepository.findById(id)
 			.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	@GetMapping("/username/{username}")
 	public ResponseEntity<List<User>> GetByUsername(@PathVariable String username){
-		return ResponseEntity.ok(repository.findAllByUsernameContainingIgnoreCase(username));
+		return ResponseEntity.ok(userRepository.findAllByUsernameContainingIgnoreCase(username));
 	}
 	@GetMapping("/email/{email}")
 	public ResponseEntity<List<User>> GetByEmail(@PathVariable String email){
-		return ResponseEntity.ok(repository.findAllByEmailContainingIgnoreCase(email));
+		return ResponseEntity.ok(userRepository.findAllByEmailContainingIgnoreCase(email));
 	}
 	@PostMapping 
 	public ResponseEntity<User> post(@RequestBody User user){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(user));
+		return ResponseEntity.status(HttpStatus.CREATED).body(userRepository.save(user));
 	}
 	@PutMapping 
 	public ResponseEntity<User> put(@RequestBody User user){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(user));
+		return ResponseEntity.status(HttpStatus.OK).body(userRepository.save(user));
 	}
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
-		repository.deleteById(id);
+		userRepository.deleteById(id);
 	}
 }
