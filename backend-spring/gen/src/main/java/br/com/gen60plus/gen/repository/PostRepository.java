@@ -10,7 +10,7 @@ import br.com.gen60plus.gen.models.Post;
 
 @Repository
 public interface PostRepository extends JpaRepository <Post, Long>{
-	public List<Post> findAllByDescriptionContainingIgnoreCase(String description);
-	public List<Post> findAllByTitleContainingIgnoreCase(String title);
-	public List<Post> findAllByAuthorContainingIgnoreCase(String author);
+	List<Post> findAllByDescriptionContainingIgnoreCase(String description);
+	List<Post> findAllByTitleContainingIgnoreCase(String title);
+	List<Post> findAllByAuthorContainingIgnoreCase(String author);
 }
