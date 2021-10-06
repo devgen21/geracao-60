@@ -1,7 +1,6 @@
 package br.com.gen60plus.gen.models;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,19 +8,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 
 @Entity
 @Table(name="tb_post")
@@ -42,23 +34,20 @@ public class Post {
 	@Column(name = "Descrição")
 	private String description;
 	
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "Data_Postagem")
-	private Date date = new java.sql.Date(System.currentTimeMillis());
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
 	@NotNull(message = "Autor nao pode estar vazio")
 	@Size(min = 4, max = 20, message = "Minimo 4 caracteres maximo 20")
 	@Column(name = "Autor")
 	private String author;
-	
+
+	 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties("tb_post")
-	@JoinColumn(name = "theme_id")
 	private Theme theme;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties("tb_post")
-	@JoinColumn(name = "user_id")
 	private User user;
 
 	
@@ -86,13 +75,6 @@ public class Post {
 		this.description = description;
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
 
 	public String getAuthor() {
 		return author;
@@ -116,6 +98,14 @@ public class Post {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
 	}
 	
 	
