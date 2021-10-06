@@ -2,13 +2,12 @@ package br.com.gen60plus.gen.models;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -16,6 +15,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties("email")
 @Entity
 @Table(name = "tb_user")
 public class User {
@@ -39,12 +39,11 @@ public class User {
 	@Column(name = "Email")
 	private String email;
 
-
-	 @OneToMany(mappedBy = "user")
-	 @JsonIgnoreProperties("tb_user")
+	
+	 @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	 @JsonIgnoreProperties("user")
 	 private List<Post> post;
 
-	
 	public long getId() {
 		return id;
 	}
@@ -76,6 +75,14 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
+	public List<Post> getPost() {
+		return post;
+	}
+
+	public void setPost(List<Post> post) {
+		this.post = post;
+	}
+
 	
 }
