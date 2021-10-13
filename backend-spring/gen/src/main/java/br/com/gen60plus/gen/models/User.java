@@ -15,7 +15,6 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties("email")
 @Entity
 @Table(name = "tb_user")
 public class User {
@@ -30,12 +29,12 @@ public class User {
 	private String username;
 	
 	@NotNull(message = "Senha nao pode estar vazio")
-	@Size(min = 4, max = 8, message = "Minimo 4 caracteres maximo 8")
+	//@Size(min = 4, max = 8, message = "Minimo 4 caracteres maximo 8")
 	@Column(name = "Senha")
 	private String password;
 	
 	@NotNull(message = "Email nao pode estar vazio")
-	@Size(min = 8, max = 200, message = "Minimo 8 caracteres maximo 200")
+	@Size(min = 8, max = 100, message = "Minimo 8 caracteres maximo 200")
 	@Column(name = "Email")
 	private String email;
 
