@@ -1,5 +1,7 @@
 package br.com.gen60plus.gen.models;
 
+import org.springframework.security.core.userdetails.UserDetails;
+
 public class UserLogin {
 
 	private long id;
@@ -7,6 +9,7 @@ public class UserLogin {
 	private String password;
 	private String email;
 	private String token;
+	private UserDetails details;
 
 	public long getId() {
 		return id;
@@ -46,6 +49,14 @@ public class UserLogin {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public UserDetails getDetails() {
+		return details;
+	}
+
+	public void setDetails(UserDetails details) {
+		this.details = details;
 	}
 
 }
