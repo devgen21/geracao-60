@@ -73,14 +73,14 @@ public class UserController {
 		userRepository.deleteById(id);
 	}
 	
-	@PostMapping("/signIn")
+	@PostMapping("/logar")
 	public ResponseEntity<UserLogin> Autentication(@RequestBody Optional<UserLogin> user) {
 		return userService.signIn(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	
-	@PostMapping("/signUp")
-	public ResponseEntity<User> Post(@RequestBody User user) {
+	@PostMapping("/cadastrar")
+	public ResponseEntity<User> Post(@RequestBody User user){
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(userService.signUp(user));
 	}
