@@ -1,6 +1,7 @@
 package br.com.gen60plus.gen.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,40 +21,48 @@ import br.com.gen60plus.gen.repository.UserRepository;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins="*", allowedHeaders="*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
-	
-    @GetMapping
-    public ResponseEntity<List<User>> GetAll(){
-        return ResponseEntity.ok(userRepository.findAll());
-    }
-    
+
+	@GetMapping("/all")
+	public ResponseEntity<List<User>> getAll() {
+		return ResponseEntity.ok(userRepository.findAll());
+	}
+
 	@GetMapping("/{id}")
-	public ResponseEntity<User> GetById (@PathVariable long id){
-		return userRepository.findById(id)
-			.map(resp -> ResponseEntity.ok(resp))
+	public ResponseEntity<User> getById(@PathVariable long id) {
+		return userRepository.findById(id).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
-	@GetMapping("/username/{username}")
-	public ResponseEntity<List<User>> GetByUsername(@PathVariable String username){
-		return ResponseEntity.ok(userRepository.findAllByUsernameContainingIgnoreCase(username));
-	}
-	@GetMapping("/email/{email}")
-	public ResponseEntity<List<User>> GetByEmail(@PathVariable String email){
-		return ResponseEntity.ok(userRepository.findAllByEmailContainingIgnoreCase(email));
-	}
-	@PostMapping 
-	public ResponseEntity<User> post(@RequestBody User user){
+
+	
+	  @GetMapping("/username/{username}") public ResponseEntity<List<User>>
+	  getByUsername(@PathVariable String username){ 
+		  return ResponseEntity.ok(userRepository.findAllByUsernameContainingIgnoreCase(
+	  username)); 
+		}
+	  
+	  
+	  
+	  @GetMapping("/email/{email}") public ResponseEntity<List<User>>
+	  getByEmail(@PathVariable String email){ return
+	  ResponseEntity.ok(userRepository.findAllByEmailContainingIgnoreCase(email));
+	  }
+	 
+
+	@PostMapping
+	public ResponseEntity<User> post(@RequestBody User user) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(userRepository.save(user));
 	}
-	@PutMapping 
-	public ResponseEntity<User> put(@RequestBody User user){
+
+	@PutMapping
+	public ResponseEntity<User> put(@RequestBody User user) {
 		return ResponseEntity.status(HttpStatus.OK).body(userRepository.save(user));
 	}
+
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
 		userRepository.deleteById(id);
