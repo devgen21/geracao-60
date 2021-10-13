@@ -12,5 +12,5 @@ import br.com.gen60plus.gen.models.User;
 public interface UserRepository extends JpaRepository <User, Long>{
 	 List<User> findAllByUsernameContainingIgnoreCase(String username);
 	 List<User> findAllByEmailContainingIgnoreCase(String email);
-	 Optional<User> findAllByUser(String user);
+	 Optional<User> findAllByUsername(String username);
 }
