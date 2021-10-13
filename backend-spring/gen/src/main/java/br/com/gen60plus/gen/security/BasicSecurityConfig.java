@@ -24,14 +24,14 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Bean
 	public PasswordEncoder passwordEncoder () {
-		return new BCryptPasswordEncoder ();
+		return new BCryptPasswordEncoder();
 	}
 	
 	@Override
 	protected void configure (HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/usuarios/logar").permitAll()
-		.antMatchers("/usuarios/cadastrar").permitAll()
+		.antMatchers("/user/logar").permitAll()
+		.antMatchers("/user/cadastrar").permitAll()
 		.anyRequest().authenticated()
 		.and().httpBasic()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
