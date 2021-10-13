@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.gen60plus.gen.models.User;
 import br.com.gen60plus.gen.models.UserLogin;
+import br.com.gen60plus.gen.models.UserReponse;
 import br.com.gen60plus.gen.repository.UserRepository;
 import br.com.gen60plus.gen.service.UserService;
 
@@ -74,15 +75,29 @@ public class UserController {
 	}
 	
 	@PostMapping("/logar")
-	public ResponseEntity<UserLogin> Autentication(@RequestBody Optional<UserLogin> user) {
+	public ResponseEntity<UserLogin> Autentication(@RequestBody UserLogin user) {
 		return userService.signIn(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	
 	@PostMapping("/cadastrar")
-	public ResponseEntity<User> Post(@RequestBody User user){
+	public ResponseEntity signUp(@RequestBody User user){
+		
+		UserReponse userResponse = new UserReponse();
+		
+		
+		try {
+			user = userService.signUp(user);
+		} catch (Exception e) {
+			userResponse.setMessage(e.getMessage());
+			
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST)		
+			.body(userResponse);
+		}
+		
+		
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(userService.signUp(user));
+		.body(user);
 	}
 	
 }
