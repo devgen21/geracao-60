@@ -17,13 +17,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.gen60plus.gen.models.User;
+import br.com.gen60plus.gen.models.UserLogin;
 import br.com.gen60plus.gen.repository.UserRepository;
+import br.com.gen60plus.gen.service.UserService;
 
 @RestController
 @RequestMapping("/user")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
-
+	
+	@Autowired
+	private UserService userService;
+	
 	@Autowired
 	private UserRepository userRepository;
 
@@ -67,4 +72,17 @@ public class UserController {
 	public void delete(@PathVariable long id) {
 		userRepository.deleteById(id);
 	}
+	
+	@PostMapping("/signIn")
+	public ResponseEntity<UserLogin> Autentication(@RequestBody Optional<UserLogin> user) {
+		return userService.signIn(user).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+	}
+	
+	@PostMapping("/signUp")
+	public ResponseEntity<User> Post(@RequestBody User user) {
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(userService.signUp(user));
+	}
+	
 }
