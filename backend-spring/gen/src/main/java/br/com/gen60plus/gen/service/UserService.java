@@ -34,7 +34,7 @@ public class UserService {
 	public Optional<UserLogin> signIn(Optional<UserLogin> userLogin) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<User> user = repository.findAllByUser(userLogin.get().getUsername());
+		Optional<User> user = repository.findAllByUsername(userLogin.get().getUsername());
 
 		if (user.isPresent()) {
 			if (encoder.matches(userLogin.get().getPassword(), user.get().getPassword())) {
