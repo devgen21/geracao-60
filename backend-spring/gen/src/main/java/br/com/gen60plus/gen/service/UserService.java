@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +20,19 @@ public class UserService {
 
 	@Autowired
 	private UserRepository repository;
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
 
-	public User signUp(User user) {
+	public User signUp(User user) throws Exception {
+		
+		Optional <List<User>> users = repository.findAllByUsername(user.getUsername());
+		
+		if (users.isPresent() && !users.get().isEmpty()) {
+			
+			throw new Exception("Usuário já cadastrado!");
+		}
+		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		String passwordEncoder = encoder.encode(user.getPassword());
@@ -31,24 +44,33 @@ public class UserService {
 		return repository.findAll();
 	}
 
-	public Optional<UserLogin> signIn(Optional<UserLogin> userLogin) {
+	public Optional<UserLogin> signIn(UserLogin userLogin) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<User> user = repository.findAllByUsername(userLogin.get().getUsername());
+		Optional <List<User>> users = repository.findAllByUsername(userLogin.getUsername());
+		
+		if (users.isPresent()) {
+			
+			for(User user : users.get()) {
+				
+				if (encoder.matches(userLogin.getPassword(), user.getPassword())) {
 
-		if (user.isPresent()) {
-			if (encoder.matches(userLogin.get().getPassword(), user.get().getPassword())) {
+					String auth = userLogin.getUsername() + ":" + userLogin.getPassword();
+					byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+					
 
-				String auth = userLogin.get().getUsername() + ":" + userLogin.get().getPassword();
-				byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				String authHeader = "Basic" + new String(encodeAuth);
-
-				userLogin.get().setToken(authHeader);
-				userLogin.get().setUsername(user.get().getUsername());
-				userLogin.get().setPassword(user.get().getPassword());
-
-				return userLogin;
+					userLogin.setToken(encodeAuth.toString());
+					userLogin.setUsername(user.getUsername());
+		
+					UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
+					userLogin.setDetails(userDetails);
+					
+					return Optional.ofNullable(userLogin);
+				}
+				
 			}
+			
+
 		}
 		return null;
 	}
