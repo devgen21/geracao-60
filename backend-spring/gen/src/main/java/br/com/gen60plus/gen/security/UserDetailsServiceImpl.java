@@ -1,5 +1,6 @@
 package br.com.gen60plus.gen.security;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Optional<User> user = userRepository.findAllByUsername(username);
-		user.orElseThrow(() -> new UsernameNotFoundException (username + "not found."));
+		
+		Optional<List<User>> users = userRepository.findAllByUsername(username);
+		Optional<User> user = users.get().stream().findAny();
+		
+		user.orElseThrow(() -> 
+			new UsernameNotFoundException (username + "not found.")
+		);
+		
 		return user.map(UserDetailsImpl::new).get();
 		
 	}
