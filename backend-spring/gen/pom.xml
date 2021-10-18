@@ -11,9 +11,11 @@
     </parent>
     <groupId>br.com.gen60plus</groupId>
     <artifactId>gen</artifactId>
-    <version>1.0.0-R1</version>
+    <version>1.0.0-SNAPSHOT</version>
 	<!--
-	RELEASE
+	SNAPSHOT-Desenvolvimento = exemplo 1.0.0-SNAPSHOT
+	RELEASE-Homoloção = exemplo 1.0.0-R1
+	HEROKU-Produção = exemplo 1.0.0
 	-->
 	<!--
 	major
