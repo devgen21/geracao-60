@@ -10,10 +10,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "tb_user")
@@ -23,9 +26,9 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull(message = "Nome_Usuario nao pode estar vazio")
-	@Size(min = 5, max = 20, message = "Minimo 5 caracteres maximo 20")
-	@Column(name = "Nome_Usuario")
+	
+	@ApiModelProperty(example = "email@email.com.br")
+	@NotNull(message = "O atributo Usuário é Obrigatório!")
 	private String username;
 	
 	@NotNull(message = "Senha nao pode estar vazio")
@@ -33,8 +36,10 @@ public class User {
 	@Column(name = "Senha")
 	private String password;
 	
+	
 	@NotNull(message = "Email nao pode estar vazio")
 	@Size(min = 8, max = 100, message = "Minimo 8 caracteres maximo 200")
+	@Email(message = "O atributo Usuário deve ser um email válido!")
 	@Column(name = "Email")
 	private String email;
 
