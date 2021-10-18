@@ -2,7 +2,6 @@
 *.class
 
 /.metadata/
-backend-spring/gen/app/src/main/resources/application.properties
 
 # Log file
 *.log
