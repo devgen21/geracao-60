@@ -11,7 +11,12 @@
     </parent>
     <groupId>br.com.gen60plus</groupId>
     <artifactId>gen</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
+	<!--
+	major
+	mirror
+	bug
+	-->
     <name>gen</name>
     <description>Api Rest Gen60</description>
     <properties>
