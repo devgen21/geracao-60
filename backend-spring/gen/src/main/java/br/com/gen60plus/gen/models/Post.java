@@ -38,10 +38,9 @@ public class Post {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
-	@NotNull(message = "Autor nao pode estar vazio")
-	@Size(min = 4, max = 20, message = "Minimo 4 caracteres maximo 20")
-	@Column(name = "Autor")
-	private String author;
+	@Size(min = 5, max = 200, message = "Minimo 5 caracteres maximo 200")
+	@Column(name = "Imagem")
+	private String image;
 
 	 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -75,15 +74,6 @@ public class Post {
 		this.description = description;
 	}
 
-
-	public String getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-
 	public Theme getTheme() {
 		return theme;
 	}
@@ -106,6 +96,14 @@ public class Post {
 
 	public void setData(Date data) {
 		this.data = data;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	

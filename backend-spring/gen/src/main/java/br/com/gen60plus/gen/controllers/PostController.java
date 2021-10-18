@@ -50,10 +50,6 @@ public class PostController {
 			return ResponseEntity.ok(repository.findAllByDescriptionContainingIgnoreCase(description));
 		}
 	    
-	    @GetMapping("/author/{author}")
-		public ResponseEntity<List<Post>> GetByAuthorTheme(@PathVariable String author){
-			return ResponseEntity.ok(repository.findAllByAuthorContainingIgnoreCase(author));
-		}
 	    
 		
 		@PostMapping
