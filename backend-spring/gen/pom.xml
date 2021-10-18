@@ -11,7 +11,10 @@
     </parent>
     <groupId>br.com.gen60plus</groupId>
     <artifactId>gen</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-R1</version>
+	<!--
+	RELEASE
+	-->
 	<!--
 	major
 	mirror
