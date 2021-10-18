@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.gen60plus.gen.models.User;
 import br.com.gen60plus.gen.models.UserLogin;
-import br.com.gen60plus.gen.models.UserReponse;
+import br.com.gen60plus.gen.models.UserResponse;
 import br.com.gen60plus.gen.repository.UserRepository;
 import br.com.gen60plus.gen.service.UserService;
 
@@ -73,7 +73,7 @@ public class UserController {
 	@PostMapping("/cadastrar")
 	public ResponseEntity signUp(@RequestBody User user){
 		
-		UserReponse userResponse = new UserReponse();
+		UserResponse userResponse = new UserResponse();
 		
 		
 		try {
