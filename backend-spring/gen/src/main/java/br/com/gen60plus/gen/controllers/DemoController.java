@@ -13,6 +13,6 @@ public class DemoController {
 	
 	@GetMapping
 	public ResponseEntity<String> demo() {
-		return ResponseEntity.ok("Working v1 ...");
+		return ResponseEntity.ok("Working v2 ...");
 	}	
 }
