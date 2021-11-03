@@ -6,14 +6,10 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-
-  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
-
- 
-  {path: 'inicio', component: InicioComponent},
+  
+  {path: '', component: InicioComponent},
   {path: 'entrar', component: EntrarComponent},
   {path: 'cadastrar', component: CadastrarComponent},
-  
   {path: '**', component: NotFoundComponent}
 
 ];
