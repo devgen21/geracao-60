@@ -1,0 +1,64 @@
+.background-home {
+    width: 100%;
+    height: 624px;
+    background-image: url("../../assets/img/background-home.png") !important;
+    image-rendering: -webkit-optimize-contrast;
+ 
+}
+/* Desktop 1200 PX*/
+@media (max-width: 1200px) {
+    .background-home {
+        width: 100%;
+        height: 390px;
+        background-image: url("../../assets/img/background-home-1200-390.png") !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+/* MOBILE 630 PX*/
+@media (max-width: 630px) {
+    .background-home {
+        width: 100%;
+        height: 790px;
+        
+        background-image: url("../../assets/img/background-home-mobile-630-790.png") !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+/* MOBILE 320 PX*/
+@media (max-width: 320px) {
+    .background-home {
+        width: 100%;
+        height: 500px;
+        
+        background-image: url("../../assets/img/background-home-mobile.png") !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.card {
+   
+    background-color: transparent !important;
+    border: 0;
+}
+.card-text{
+    text-align: start;
+    color: #FFFFFF !important;
+    margin-left: 0.5rem;
+    margin-top: 5rem;
+    font-size: 4.8rem;
+}
+
+@media (max-width: 1200px) {
+    .card-text{
+        text-align: start;
+        color: #FFFFFF !important;
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+        font-size: 2rem;
+    }
+}
+
