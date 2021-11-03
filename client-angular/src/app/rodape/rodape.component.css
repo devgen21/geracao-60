@@ -1,0 +1,21 @@
+:root {
+    --blue-primary: #3254FC;
+    --yellow-primary: #FAE01E;
+    --orange-primary: #FF931D;
+  }
+
+  nav {
+      background-color: var(--blue-primary) !important;
+  }
+  
+  ul.gen-rodape{
+      list-style: none;
+      padding: 0px;
+      margin: 0;
+  }
+  ul.gen-rodape li{
+    margin: 0;
+    padding: 5px;
+    
+  }
+ 
