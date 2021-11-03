@@ -1,9 +1,15 @@
+
 :root {
     --blue-primary: #3254FC;
     --yellow-primary: #FAE01E;
     --orange-primary: #FF931D;
+
   }
 
-  nav {
-      background-color: var(--orange-primary) !important;
+   nav {
+      background-color: #f8f9fa;
   }
+
+  a{
+    cursor: pointer;
+}
