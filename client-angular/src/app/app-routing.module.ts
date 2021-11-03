@@ -6,7 +6,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  
+
   {path: '', component: InicioComponent},
   {path: 'entrar', component: EntrarComponent},
   {path: 'cadastrar', component: CadastrarComponent},
