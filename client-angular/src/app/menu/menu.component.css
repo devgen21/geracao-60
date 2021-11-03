@@ -1,0 +1,9 @@
+:root {
+    --blue-primary: #3254FC;
+    --yellow-primary: #FAE01E;
+    --orange-primary: #FF931D;
+  }
+
+  nav {
+      background-color: var(--orange-primary) !important;
+  }

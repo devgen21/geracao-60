@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Design system*/
+
+/* principal colors */
+:root {
+    --blue-primary: #3254FC;
+    --yellow-primary: #FAE01E;
+    --orange-primary: #FF931D;
+  }
+
+  nav {
+      background-color: var(--blue-primary) !important;
+  }
