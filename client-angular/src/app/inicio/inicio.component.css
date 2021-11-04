@@ -3,6 +3,8 @@
     height: 624px;
     background-image: url("../../assets/img/background-home.png") !important;
     image-rendering: -webkit-optimize-contrast;
+    background-repeat: no-repeat;
+    background-size: contain;
  
 }
 /* Desktop 1200 PX*/
@@ -11,8 +13,9 @@
         width: 100%;
         height: 390px;
         background-image: url("../../assets/img/background-home-1200-390.png") !important;
-        background-repeat: no-repeat;
-        background-size: contain;
+        image-rendering: -webkit-optimize-contrast;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
     }
 }
 /* MOBILE 630 PX*/
@@ -22,6 +25,7 @@
         height: 790px;
         
         background-image: url("../../assets/img/background-home-mobile-630-790.png") !important;
+        image-rendering: -webkit-optimize-contrast;
         background-repeat: no-repeat;
         background-size: contain;
     }
@@ -30,7 +34,7 @@
 /* MOBILE 320 PX*/
 @media (max-width: 320px) {
     .background-home {
-        width: 100%;
+        width: 320px;
         height: 500px;
         
         background-image: url("../../assets/img/background-home-mobile.png") !important;
@@ -38,11 +42,20 @@
         background-size: contain;
     }
 }
-
+.card-deck{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 2rem;
+}
 .card {
    
     background-color: transparent !important;
     border: 0;
+   
+    max-width: 600px;
+    max-height: 500px;
 }
 .card-text{
     text-align: start;
@@ -62,3 +75,13 @@
     }
 }
 
+.cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-item{
+    display: flex;
+    justify-content: center;
+}
