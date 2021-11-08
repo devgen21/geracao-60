@@ -3,7 +3,7 @@
     height: 624px;
     background-image: url("../../assets/img/background-home.png") !important;
     image-rendering: -webkit-optimize-contrast;
-    background-repeat: no-repeat;
+    background-repeat: round;
     background-size: contain;
  
 }

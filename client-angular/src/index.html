@@ -1,30 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <title>Gen60plus</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/91280708?s=400&u=9780c75e6fe86ed6cf1cae1fafa2a24b965c8f56&v=4">
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <app-root></app-root>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gen60plus</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://avatars.githubusercontent.com/u/91280708?s=400&u=9780c75e6fe86ed6cf1cae1fafa2a24b965c8f56&v=4"
+    />
 
+    <!--Imports Styles-->
+    <link rel="stylesheet" href="./styles.css" />
 
+    <!-- Goolge fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <app-root></app-root>
 
-  <script class="chatbot">
-    window.watsonAssistantChatOptions = {
+    <script class="chatbot">
+      window.watsonAssistantChatOptions = {
         integrationID: "86a0acea-cfc4-47e3-a873-256c48b95590", // The ID of this integration.
         region: "us-east", // The region your integration is hosted in.
         serviceInstanceID: "f720a835-0977-41d0-9d47-ce5ee220bf92", // The ID of your service instance.
-        onLoad: function(instance) { instance.render(); }
+        onLoad: function (instance) {
+          instance.render();
+        },
       };
-    setTimeout(function(){
-      const t=document.createElement('script');
-      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
-      document.head.appendChild(t);
-    });
-  </script>
-</body>
+      setTimeout(function () {
+        const t = document.createElement("script");
+        t.src =
+          "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+          (window.watsonAssistantChatOptions.clientVersion || "latest") +
+          "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+  </body>
 </html>
