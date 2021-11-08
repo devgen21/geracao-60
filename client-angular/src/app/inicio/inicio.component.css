@@ -82,6 +82,16 @@
 }
 
 .card-item{
+    width: 200px;
+    height: 200px;
+    margin-left: 2rem;
     display: flex;
     justify-content: center;
+    border-radius: 100px !important;
+    background-color: black;
+}
+
+
+.main-conteudo{
+    width: 100%;
 }

@@ -19,3 +19,26 @@
     
   }
  
+  .rodape{
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    background-color: white !important;
+  }
+
+  .nav-link-menu {
+    color: #16171a !important;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+  .nav-link-menu:hover {
+    opacity: 80% !important;
+  }
+  .nav-link-entrar {
+    color: #3254fc !important;
+    font-weight: 400;
+  }
+  
+  .nav-item {
+    padding-left: 0.9rem;
+  }
