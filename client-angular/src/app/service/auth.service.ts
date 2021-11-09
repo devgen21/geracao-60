@@ -1,22 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../models/User';
-import { UserLogin } from '../models/UserLogin';
+
+import { User } from '../model/User';
+import { UserLogin } from '../model/UserLogin';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  entrar(UserLogin: UserLogin): Observable <UserLogin>{
-    return this.http.post<UserLogin>('http://localhost:8080/user/logar', UserLogin)
+  entrar(userLogin: UserLogin): Observable<UserLogin> {
+    return this.http.post<UserLogin>(
+      'https://gen60plus.herokuapp.com/user/logar',
+      userLogin
+    );
   }
 
   cadastrar(user: User): Observable<User> {
-    return this.http.post<User>('http://localhost:8080/user/cadastrar', user)
+    return this.http.post<User>(
+      'https://gen60plus.herokuapp.com/user/cadastrar',
+      user
+    );
   }
-
 }

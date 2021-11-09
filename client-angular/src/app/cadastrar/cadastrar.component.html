@@ -72,14 +72,17 @@
     <!--Fist Name-->
         <label
         class="label-name" 
-        style="font-size: 22px;" for="fname">Nome</label>
+        style="font-size: 22px;" for="username">Nome de usuário</label>
         <br>
         <input 
+           [(ngModel)]="user.username"
             class="input-fname"
             type="text" 
-            id="fname" 
+            id="username" 
             name="firstname" 
-            placeholder="Digite o seu nome" >
+            placeholder="Digite o seu username"
+           
+            >
         <div id="textFname"></div>
         <br>
     <!--Ultimo nome-->  
@@ -88,6 +91,7 @@
         </label>
         <br>
         <input 
+            [(ngModel)]="user.email"
             class="input-fname"
             style="margin-bottom: 5px; font-size: 18px;" 
             type="text" 
@@ -102,17 +106,18 @@
         style="font-size: 22px; margin-top: 5px " for="lname">Senha
     </label>
     <br>
-    <input 
+    <input
+        [(ngModel)]="user.password"
         class="input-fname"
         style="margin-bottom: 5px; font-size: 18px;" 
         type="text" 
-        id="lname" 
-        name="lastname" 
+        id="password" 
+        name="password" 
         placeholder="******************">
         
         <br><br>
         <div class="d-flex justify-content-center">
-            <button class="btn btn-success">Cadastrar</button>
+            <button type="submit" class="btn btn-success" (click)="signUp()">Cadastrar</button>
         </div>
         <h6 style="text-align:center;">Ja possui cadastro?  <a href="/entrar" >Entre aqui</a></h6>
             
