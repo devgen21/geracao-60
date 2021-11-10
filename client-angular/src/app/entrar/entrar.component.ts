@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
@@ -11,7 +12,7 @@ import { AuthService } from '../service/auth.service';
 export class EntrarComponent implements OnInit {
   userLogin: UserLogin = new UserLogin();
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -23,9 +24,13 @@ export class EntrarComponent implements OnInit {
         this.userLogin = resp;
         environment.token = this.userLogin.token;
         environment.username = this.userLogin.username;
+        environment.email = this.userLogin.email;
         environment.id = this.userLogin.id;
+        alert('Usuário logado!');
 
-        // this.router.navigate(['/feed'])
+
+        this.router.navigate(['/inicio'])
+
       },
       (erro) => {
         if (erro.status == 500) {
