@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 
@@ -10,16 +11,25 @@ import { AuthService } from '../service/auth.service';
 export class CadastrarComponent implements OnInit {
   user: User = new User();
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     window.scroll(0, 0);
   }
 
   signUp() {
-    this.authService.cadastrar(this.user).subscribe((resp: User) => {
-      this.user = resp;
-      alert('Usuário cadastrado!');
-    });
+    this.authService.cadastrar(this.user).subscribe(
+      (resp: User) => {
+        this.user = resp;
+        alert('Usuário cadastrado!');
+
+        this.router.navigate(['/entrar']);
+      },
+      (erro) => {
+        if (erro.status == 500) {
+          alert('Dados incorretos!');
+        }
+      }
+    );
   }
 }
