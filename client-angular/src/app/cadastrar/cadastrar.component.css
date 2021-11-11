@@ -7,7 +7,10 @@
   padding: 20px;
 }
 
+
+
 .label-name {
+  margin-top: 10px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
@@ -185,6 +188,7 @@ ul.gen-rodape li {
 
 .btn {
   width: 100% !important;
+  color: white;
   background-color: var(--orange-primary) !important;
   opacity: 100%;
   transition: 500ms;

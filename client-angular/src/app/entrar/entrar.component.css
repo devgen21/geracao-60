@@ -11,6 +11,8 @@ h1 {
   color: var(--blue-primary);
 }
 label {
+  margin-top: 10px;
+  font-size: 1.35rem;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
@@ -137,6 +139,7 @@ label {
 
 .btn{
   width: 100% !important;
+  color: white;
   background-color: var(--orange-primary) !important;
   opacity: 100%;
   transition: 500ms;
