@@ -28,6 +28,7 @@ a {
 }
 
 .nav-link-menu {
+  font-size: 1.5rem;
   color: #16171a !important;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -36,6 +37,7 @@ a {
   opacity: 80% !important;
 }
 .nav-link-entrar {
+  font-size: 1.2rem;
   color: #3254fc !important;
   font-weight: 400;
 }
