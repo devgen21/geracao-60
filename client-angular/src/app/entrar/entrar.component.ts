@@ -29,7 +29,7 @@ export class EntrarComponent implements OnInit {
         alert('Usuário logado!');
 
 
-        this.router.navigate(['/inicio'])
+        this.router.navigate(['/feed'])
 
       },
       (erro) => {
