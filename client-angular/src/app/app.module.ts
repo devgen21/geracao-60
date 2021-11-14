@@ -12,6 +12,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { FeedComponent } from './feed/feed.component';
+import { Gen60plusComponent } from './gen60plus/gen60plus.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FeedComponent } from './feed/feed.component';
     CadastrarComponent,
     InicioComponent,
     TemaComponent,
-    FeedComponent
+    FeedComponent,
+    Gen60plusComponent
 
   ],
   imports: [
