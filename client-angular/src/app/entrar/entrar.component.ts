@@ -19,14 +19,14 @@ export class EntrarComponent implements OnInit {
   }
 
   signIn() {
-    this.auth.entrar(this.userLogin).subscribe(
+    this.auth.logar(this.userLogin).subscribe(
       (resp: UserLogin) => {
         this.userLogin = resp;
         environment.token = this.userLogin.token;
         environment.username = this.userLogin.username;
         environment.email = this.userLogin.email;
         environment.id = this.userLogin.id;
-        alert('Usuário logado!');
+        console.log('Usuário logado!');
 
 
         this.router.navigate(['/feed'])

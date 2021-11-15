@@ -1,0 +1,30 @@
+:root {
+  --blue-primary: #3254fc;
+  --yellow-primary: #fae01e;
+  --orange-primary: #ff931d;
+}
+
+.title {
+  margin-bottom: 2rem !important;
+  color: #1129a3af;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem !important;
+  font-weight: 800;
+}
+
+.novo-tema {
+  width: 100%;
+  color: var(--blue-primary);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem !important;
+  font-weight: 800;
+  border-color: var(--blue-primary);
+  transition: 900ms;
+}
+
+.novo-tema:hover {
+  transition: 880ms;
+  color: #fff;
+  font-size: 2rem;
+  background-color: var(--blue-primary);
+}

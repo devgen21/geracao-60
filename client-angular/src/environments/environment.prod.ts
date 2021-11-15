@@ -4,4 +4,5 @@ export const environment = {
   username: '',
   email: '',
   id: 0,
+  server: 'https://gen60plus-api.herokuapp.com'
 };

@@ -319,3 +319,10 @@
         background: #ffffff;
     }
     
+    .largura{
+      width: 100% !important;
+    }
+
+    .img-primary{
+      background-size: contain !important;
+    }

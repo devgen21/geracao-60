@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
+  username = environment.username;
+  token = environment.token;
+  constructor(private router: Router) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit(): void {
+  sair() {
+    this.router.navigate(['/entrar']);
+    environment.token = '';
+    environment.username = '';
+    environment.id = 0;
   }
-
 }

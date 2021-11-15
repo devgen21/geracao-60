@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.component';
+import { EditThemeComponent } from './edit/edit-theme/edit-theme.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { Gen60plusComponent } from './gen60plus/gen60plus.component';
@@ -16,10 +18,13 @@ const routes: Routes = [
   {path: 'entrar', component: EntrarComponent},
   {path: 'cadastrar', component: CadastrarComponent},  
   {path: 'feed', component: FeedComponent},
-  {path: 'tema', component: TemaComponent},
   {path: 'gen60plus', component: Gen60plusComponent},
   {path: 'suporte', component: SuporteComponent},
-  
+
+  {path: 'tema', component: TemaComponent},
+  { path: 'delete-theme/:id', component: DeleteThemeComponent },
+  { path: 'edit-theme/:id', component: EditThemeComponent },
+
   {path: '**', component: NotFoundComponent}
 ];
 

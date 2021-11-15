@@ -15,7 +15,6 @@ export class TemaService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-
   getAllTheme(): Observable<Theme[]>{
     return this.http.get<Theme[]>('https://gen60plus-api.herokuapp.com/temas', this.token)
   }

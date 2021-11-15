@@ -1,63 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light container ">
-  <a class="navbar-brand" href="#">
-    <img
-      src="https://avatars.githubusercontent.com/u/91280708?s=64&v=4"
-      title="source: imgur.com"
-      height="60px"
-      width="60px"
-      class="img-fluid rounded-circle"
-    />
-  </a>
-
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNavDropdown"
-    aria-controls="navbarNavDropdown"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav flex-sm-wrap">
-      <li class="nav-item">
-        <a class="nav-link nav-link-menu" href="#"><strong>Home</strong></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-link-menu" href="#"><strong>Temas</strong> </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-link-menu" href="#"><strong>Gen60+</strong></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-link-menu" href="#"><strong>Suporte</strong></a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto d-flex justify align-items-center">
-      <li class="entrar">
-        <a class="nav-link nav-link-entrar" aria-current="page" href="/">
-          Voltar
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            fill="currentColor"
-            class="bi bi-arrow-left-short"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
-            />
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<app-menu-default></app-menu-default>
 
 <main class="conteudo-main">
   <div class="container">
@@ -67,7 +8,7 @@
       <div class="col-md-6 mt-5 mb-4">
         <div class="row d-flex justify-content-center">
           <div class="col-md-10">
-            <h1 class="text-center "><Strong>Entrar com usuário</Strong> </h1>
+            <h1 class="text-center"><Strong>Entrar com usuário</Strong></h1>
             <div style="height: 10px"></div>
             <div class="form-group">
               <label for="nome">Nome de usuário</label>
@@ -94,9 +35,7 @@
 
               <br />
               <div class="d-flex justify-content-center">
-                <button class="btn shadow" (click)="signIn()">
-                  Confirmar
-                </button>
+                <button class="btn shadow" (click)="signIn()">Confirmar</button>
               </div>
               <h6 style="text-align: center">
                 Novo aqui? <a href="/cadastrar">Cadastra-se</a>
@@ -109,45 +48,5 @@
   </div>
 </main>
 
-<div class="rodape">
-  <footer class="pt-4 container py-4">
-    <div class="row">
-      <div class="col col-lg-6 d-flex justify-content-">
-        <img
-          src="https://avatars.githubusercontent.com/u/91280708?s=400&u=9780c75e6fe86ed6cf1cae1fafa2a24b965c8f56&v=4"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-        />
-        <p class="text-black mr-auto mx-4">
-          Impactando vidas através da tecnologia.
-        </p>
-      </div>
-      <div class="col d-flex justify-content-center">
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link nav-link-menu" href="#"
-              ><strong>Home</strong>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-menu" href="#"
-              ><strong>Temas</strong></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-menu" href="#"
-              ><strong>Gen60+</strong></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-menu" href="#"
-              ><strong>Suporte</strong></a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-</div>
+<div style="height: 250px;"></div>
+<app-rodape-default></app-rodape-default>

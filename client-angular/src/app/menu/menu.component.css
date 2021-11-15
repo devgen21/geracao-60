@@ -1,60 +1,83 @@
 :root {
-  --blue-primary: #3254fc;
-  --yellow-primary: #fae01e;
-  --orange-primary: #ff931d;
+  --blue-primary: #3254FC;
+  --yellow-primary: #FAE01E;
+  --orange-primary: #FF931D;
+}
+.fonte{
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem !important;
+  font-weight: 800;
+}
+.fundo{
+  background-color: var(--blue-primary) !important;
 }
 
-svg {
+
+
+.btn-outline-success {
+  color: rgb(255, 255, 255) !important;
+  background-color: #e09214 !important;
+  border: #e09214 !important;
+  transition: 500ms !important;
+
+}
+
+.btn-outline-success:hover {
+  background-color: #e09214c0  !important;
+  
+}
+.navbar-brand{
+  color: #e09214  !important;
+  transition: 500ms !important;
+}
+.navbar-brand:hover{
+  transition: 500ms;
+  color: #e09214 !important;
+  background: -webkit-linear-gradient(#eee, #e0921477);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #e0921498;
+
+}
+.navbar-brand{
+  font-family: 'Michroma', sans-serif;
+}
+.nav-link {
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.2rem !important;
+  font-weight: 700;
+}
+
+.nav-link:hover{
+  color: #FFB761  !important;
+  transition: 500ms !important;
+}
+
+::placeholder{
+  color: #161615;
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.8rem !important;
+}
+
+.btn{
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.8rem !important;
+}
+
+.icon-menu{
+  color: white !important;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  transition: 600ms;
+}
+.icon-menu:hover{
+  transition: 600ms;
   color: var(--orange-primary) !important;
 }
-.entrar {
-  color: var(--blue-primary) !important;
-  font-size: 1.25rem;
-  transition: 300ms;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-.entrar:hover {
-  transition: 300ms;
-  opacity: 70% !important;
+.icon-sair{
+  cursor: pointer !important;
 }
 
-.collapse {
-  padding: 1rem;
-}
-
-a {
-  cursor: pointer;
-}
-
-.nav-link-menu {
-  font-size: 1.5rem;
-  color: #16171a !important;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-.nav-link-menu:hover {
-  opacity: 80% !important;
-}
-.nav-link-entrar {
-  font-size: 1.2rem;
-  color: #3254fc !important;
-  font-weight: 400;
-}
-
-.nav-item {
-  padding-left: 0.9rem;
-}
-ul {
-  display: flex;
-  justify-content: center;
-}
-
-.entrar {
-  width: 200px;
-}
-.entrar:hover {
-  width: 100%;
-  border-radius: 20px;
-  width: 210px;
+.nav-item{
+  text-decoration: none !important;
+  list-style: none !important;
 }

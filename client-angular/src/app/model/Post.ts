@@ -1,4 +1,5 @@
 import { Theme } from './Theme';
+import { User } from './User';
 
 export class Post {
   public id: number;
@@ -7,4 +8,5 @@ export class Post {
   public data: Date;
   public image: string;
   public theme: Theme;
+  public user: User;
 }
