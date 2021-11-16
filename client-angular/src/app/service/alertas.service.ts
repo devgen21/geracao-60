@@ -14,7 +14,7 @@ export class AlertasService {
     setTimeout(() => {
       console.log('ocultar a mensagem');
       bsModalRef.hide();
-    }, 2200);
+    }, 1100);
   }
 
   showAlertDanger(message: string) {

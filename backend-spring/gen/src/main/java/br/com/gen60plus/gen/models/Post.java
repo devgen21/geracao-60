@@ -26,20 +26,20 @@ public class Post {
 	
 	@NotNull(message = "Titulo nao pode estar vazio")
 	@Size(min = 5, max = 30, message = "Minimo 5 caracteres maximo 30")
-	@Column(name = "Titulo")
+	@Column(name = "titulo")
 	private String title;
 	
 	@NotNull(message = "Descrição nao pode estar vazio")
 	@Size(min = 10, max = 200, message = "Minimo 10 caracteres maximo 200")
-	@Column(name = "Descrição")
+	@Column(name = "descricao")
 	private String description;
 	
-	@Column(name = "Data_Postagem")
+	@Column(name = "data_Postagem")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
 	@Size(min = 5, max = 200, message = "Minimo 5 caracteres maximo 200")
-	@Column(name = "Imagem")
+	@Column(name = "imagem")
 	private String image;
 
 	 
