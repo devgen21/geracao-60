@@ -39,6 +39,20 @@
   <body>
     <app-root></app-root>
 
+    <!--Libras-->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+    <!--Libras-->
+
+    <!--Bootstrap-->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -49,7 +63,8 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-
+    <!--Bootstrap-->
+    <!--Watson-->
     <script class="chatbot">
       window.watsonAssistantChatOptions = {
         integrationID: "86a0acea-cfc4-47e3-a873-256c48b95590", // The ID of this integration.
@@ -68,5 +83,6 @@
         document.head.appendChild(t);
       });
     </script>
+    <!--Watson-->
   </body>
 </html>

@@ -12,34 +12,34 @@
    
     <input
       [(ngModel)]="user.username"
-      class="input-fname"
+      class="form-control"
       type="text"
       id="username"
-      name="firstname"
+      name="username"
       placeholder="Digite seu nome de usuário"
     />
     <div id="textFname"></div>
    
     <!--Ultimo nome-->
-    <label style="font-size: 22px; margin-top: 5px" for="lname">Email </label>
+    <label style="font-size: 22px; margin-top: 5px" for="email">Email </label>
    
     <input
       [(ngModel)]="user.email"
-      class="input-fname"
+      class="form-control"
       type="text"
-      id="lname"
-      name="lastname"
+      id="email"
+      name="email"
       placeholder="Ex: email@email.com.br"
     />
     <div id="textLname"></div>
    
 
     <!--Assunto-->
-    <label style="font-size: 22px;" for="lname">Senha </label>
+    <label style="font-size: 22px;" for="password">Senha </label>
    
     <input
       [(ngModel)]="user.password"
-      class="input-fname"
+      class="form-control"
       type="password"
       id="password"
       name="password"

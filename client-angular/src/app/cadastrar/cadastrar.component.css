@@ -1,3 +1,9 @@
+:root {
+  --blue-primary: #3254fc;
+  --yellow-primary: #fae01e;
+  --orange-primary: #ff931d;
+}
+
 .div-formulario {
   display: flex;
   justify-content: center;
@@ -59,11 +65,7 @@
   }
 }
 
-:root {
-  --blue-primary: #3254fc;
-  --yellow-primary: #fae01e;
-  --orange-primary: #ff931d;
-}
+
 h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -135,11 +137,7 @@ ul {
   width: 210px;
 }
 
-:root {
-  --blue-primary: #3254fc;
-  --yellow-primary: #fae01e;
-  --orange-primary: #ff931d;
-}
+
 
 ul.gen-rodape {
   list-style: none;
@@ -201,3 +199,4 @@ ul.gen-rodape li {
   transition: 500ms;
   opacity: 75%;
 }
+
