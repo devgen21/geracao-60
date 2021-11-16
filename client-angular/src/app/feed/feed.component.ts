@@ -58,7 +58,19 @@ export class FeedComponent implements OnInit {
     //Lista todas Postagens
     this.findAllPostagens();
     //Lista todos Usuários
-    //this.findByIdUser();
+    this.findByIdUser();
+  }
+
+
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.findAllPostagens()
+    } else {
+      this.postService.getByNomePostagem(this.tituloPost).subscribe((resp: Post[])=>{
+        this.listaPostagens = resp
+      })
+    }
+
   }
 
   findAllTemas() {

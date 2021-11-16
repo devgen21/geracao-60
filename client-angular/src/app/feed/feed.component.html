@@ -8,7 +8,7 @@
           <button
             data-toggle="modal"
             data-target="#novaPostagem"
-            class="btn mr-2 nova-postagem "
+            class="btn mr-2 nova-postagem"
           >
             Nova Postagem
           </button>
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="container mb-5 mt-5" id="postagens">
+<div class="container">
   <nav>
     <div
       class="nav nav-tabs d-flex justify-content-center"
@@ -26,36 +26,34 @@
       role="tablist"
     >
       <a
-        class="nav-item nav-link active text-secondary font-weight-bold"
-        id="nav-todasPostagens-tab"
+        class="nav-link active"
+        id="nav-home-tab"
         data-toggle="tab"
-        href="#todasPostagens"
+        href="#nav-home"
         role="tab"
-        aria-controls="nav-todasPostagens"
+        aria-controls="nav-home"
         aria-selected="true"
-        >Todas as postagens</a
+        >Home</a
       >
-
       <a
-        class="nav-item nav-link text-secondary font-weight-bold"
-        id="nav-minhasPostagens-tab"
+        class="nav-link"
+        id="nav-profile-tab"
         data-toggle="tab"
-        href="#minhasPostagens"
+        href="#nav-profile"
         role="tab"
-        aria-controls="nav-minhasPostagens"
+        aria-controls="nav-profile"
         aria-selected="false"
-        >Minhas postagens</a
+        >Profile</a
       >
-
       <a
-        class="nav-item nav-link text-secondary font-weight-bold"
-        id="nav-postagemTema-tab"
+        class="nav-link"
+        id="nav-contact-tab"
         data-toggle="tab"
-        href="#postagemTema"
+        href="#nav-contact"
         role="tab"
-        aria-controls="nav-postagemTema"
+        aria-controls="nav-contact"
         aria-selected="false"
-        >Postagens por tema</a
+        >Contact</a
       >
     </div>
   </nav>
@@ -63,29 +61,39 @@
   <div class="tab-content" id="nav-tabContent">
     <div
       class="tab-pane fade show active"
-      id="todasPostagens"
+      id="nav-home"
       role="tabpanel"
-      aria-labelledby="nav-todasPostagens-tab"
+      aria-labelledby="nav-home-tab"
     >
-      Todas as postagens
+      <div class="card-columns">
+        <div class="card text-center" *ngFor='let item of listaPostagens'>
+          <div class="card-body">
+            <h5 class="card-title">{{item.title}}</h5>
+            <p class="card-text">
+              {{item.description}}
+            </p>
+            <p class="card-text">
+              <small class="text-muted"> {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
     <div
       class="tab-pane fade"
-      id="minhasPostagens"
+      id="nav-profile"
       role="tabpanel"
-      aria-labelledby="nav-minhasPostagens-tab"
+      aria-labelledby="nav-profile-tab"
     >
-      Minhas postagens
+      2
     </div>
-
     <div
       class="tab-pane fade"
-      id="postagemTema"
+      id="nav-contact"
       role="tabpanel"
-      aria-labelledby="nav-postagemTema-tab"
+      aria-labelledby="nav-contact-tab"
     >
-      Postagens por tema
+      3
     </div>
   </div>
 </div>

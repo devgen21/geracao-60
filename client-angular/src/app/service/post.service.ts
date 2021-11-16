@@ -23,8 +23,8 @@ export class PostService {
     return this.http.get<Post>(`${environment.server}/feed/${id}`, this.token)
   }
 
-  getByNomePostagem(titulo: string): Observable<Post[]> {
-    return this.http.get<Post[]>(`${environment.server}/feed/titulo/${titulo}`, this.token)
+  getByNomePostagem(title: string): Observable<Post[]> {
+    return this.http.get<Post[]>(`${environment.server}/feed/title/${title}`, this.token)
   }
 
   postPostagem(post: Post): Observable<Post>{
