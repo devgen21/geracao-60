@@ -76,6 +76,18 @@
               <small class="text-muted"> {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small>
             </p>
           </div>
+          <button
+          class="btn btn-info mr-3"
+          [routerLink]="['/edit-post', item.id ]"
+        >
+          Editar
+        </button>
+        <button
+          class="btn btn-danger"
+          [routerLink]="['/delete-post', item.id]"
+        >
+          Apagar
+        </button>
         </div>
       </div>
     </div>

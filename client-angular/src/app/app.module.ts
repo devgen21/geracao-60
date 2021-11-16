@@ -21,6 +21,8 @@ import { EditThemeComponent } from './edit/edit-theme/edit-theme.component';
 import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.component';
 import { RodapeDefaultComponent } from './rodape-default/rodape-default.component';
 import { Gen60plusComponent } from './gen60plus/gen60plus.component';
+import { DeletePostComponent } from './delete/delete-post/delete-post.component';
+import { EditPostComponent } from './edit/edit-post/edit-post.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { Gen60plusComponent } from './gen60plus/gen60plus.component';
     AlertasComponent,
     EditThemeComponent,
     DeleteThemeComponent,
-    RodapeDefaultComponent
+    RodapeDefaultComponent,
+    DeletePostComponent,
+    EditPostComponent
 
   ],
   imports: [
