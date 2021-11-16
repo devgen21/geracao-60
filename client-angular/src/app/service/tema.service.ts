@@ -16,22 +16,22 @@ export class TemaService {
   }
 
   getAllTheme(): Observable<Theme[]>{
-    return this.http.get<Theme[]>('https://gen60plus-api.herokuapp.com/temas', this.token)
+    return this.http.get<Theme[]>(`${environment.server}/temas`, this.token)
   }
   
   getByIdTheme(id:number): Observable<Theme>{
-    return this.http.get<Theme>(`https://gen60plus-api.herokuapp.com/temas/${id}`,this.token)
+    return this.http.get<Theme>(`${environment.server}/temas/${id}`,this.token)
   }
 
   postTheme(theme: Theme): Observable<Theme>{
-     return this.http.post<Theme>('https://gen60plus-api.herokuapp.com/temas',theme, this.token)
+     return this.http.post<Theme>(`${environment.server}/temas`,theme, this.token)
   }
 
   putTheme(theme: Theme): Observable<Theme>{
-    return this.http.put<Theme>('https://gen60plus-api.herokuapp.com/temas',theme, this.token)
+    return this.http.put<Theme>(`${environment.server}/temas`,theme, this.token)
   }  
 
   deleteTheme(id: number){
-    return this.http.delete(`https://gen60plus-api.herokuapp.com/temas/${id}`, this.token)
+    return this.http.delete(`${environment.server}/temas/${id}`, this.token)
   }
 }

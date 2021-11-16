@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertasComponent } from '../alertas/alertas.component';
 @Injectable({
@@ -11,6 +11,10 @@ export class AlertasService {
     const bsModalRef: BsModalRef = this.bsModalService.show(AlertasComponent);
     bsModalRef.content.type = type;
     bsModalRef.content.message = message;
+    setTimeout(() => {
+      console.log('ocultar a mensagem');
+      bsModalRef.hide();
+    }, 2200);
   }
 
   showAlertDanger(message: string) {
@@ -23,5 +27,9 @@ export class AlertasService {
 
   showAlertInfo(message: string) {
     this.showAlert(message, 'info');
+  }
+
+  showAlertLoad(message: string) {
+    this.showAlert(message, 'load');
   }
 }

@@ -38,4 +38,8 @@ export class AuthService {
   putUser(user: User): Observable<User> {
     return this.http.put<User>(`${environment.server}/user`, user, this.token);
   }
+
+  getSessionUser(): User {
+    return JSON.parse(localStorage.getItem('user') || '{}');
+  }
 }

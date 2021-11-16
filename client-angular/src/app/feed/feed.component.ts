@@ -52,13 +52,13 @@ export class FeedComponent implements OnInit {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
       this.router.navigate(['/entrar']);
     }
-    
+
     //Lista todos temas
     this.findAllTemas();
     //Lista todas Postagens
     this.findAllPostagens();
     //Lista todos Usuários
-    this.findByIdUser();
+    //this.findByIdUser();
   }
 
   findAllTemas() {
@@ -94,14 +94,16 @@ export class FeedComponent implements OnInit {
   publicar() {
     this.tema.id = this.idTema;
     this.postagem.theme = this.tema;
-    this.user.id = environment.id;
+    this.user = this.authService.getSessionUser();
+    console.log(this.user);
+    //this.user.id = environment.id;
     this.postagem.user = this.user;
     this.postService.postPostagem(this.postagem).subscribe(
       (resp: Post) => {
         this.postagem = resp;
         this.alertas.showAlertSuccess('Postagem realizada com sucesso!');
         this.findAllPostagens();
-        this.findByIdUser();
+        //this.findByIdUser();
         this.findAllTemas();
         this.postagem = new Post();
       },
