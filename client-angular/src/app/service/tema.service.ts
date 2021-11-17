@@ -22,7 +22,9 @@ export class TemaService {
   getByIdTheme(id:number): Observable<Theme>{
     return this.http.get<Theme>(`${environment.server}/temas/${id}`,this.token)
   }
-
+  getByNomeTema(title: string): Observable<Theme[]> {
+    return this.http.get<Theme[]>(`${environment.server}/temas/title/${title}`, this.token)
+  }
   postTheme(theme: Theme): Observable<Theme>{
      return this.http.post<Theme>(`${environment.server}/temas`,theme, this.token)
   }

@@ -26,4 +26,33 @@ nav {
 .img-post{
   background-clip: content-box;
   width: 100% !important;
+  border-radius: 2px;
+}
+
+.card-tex{
+  text-align: justify;
+  text-justify: distribute !important;
+}
+
+.card-title{
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1129a3af;
+ 
+  font-family: "Raleway", sans-serif;
+}
+
+.card-body{
+  padding: 0;
+}
+
+.editar{
+  text-decoration: none;
+
+}
+
+.deletar{
+  text-decoration: none;
+  color: red;
+  
 }

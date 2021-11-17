@@ -49,7 +49,7 @@ export class FeedComponent implements OnInit {
     window.scroll(0, 0);
 
     if (environment.token == '') {
-      this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
+          this.alertas.showAlertInfo('Seu token expirou, faça o login novamente. ');
       this.router.navigate(['/entrar']);
     }
 
@@ -71,6 +71,17 @@ export class FeedComponent implements OnInit {
       })
     }
 
+  }
+
+  findByNomeTema() {
+    console.log(this.nomeTema)
+    if (this.nomeTema == '') {
+      this.findAllTemas()
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Theme[]) => {
+        this.listaTemas = resp
+      })
+    }
   }
 
   findAllTemas() {

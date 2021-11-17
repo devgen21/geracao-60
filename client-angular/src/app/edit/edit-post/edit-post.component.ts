@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/model/Post';
+import { Theme } from 'src/app/model/Theme';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { PostService } from 'src/app/service/post.service';
 import { environment } from 'src/environments/environment.prod';
@@ -12,6 +13,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class EditPostComponent implements OnInit {
   post: Post = new Post();
+
 
   constructor(
     private postService: PostService,
