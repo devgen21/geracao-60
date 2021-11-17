@@ -22,3 +22,8 @@
 nav {
   background-color: transparent !important;
 }
+
+.img-post{
+  background-clip: content-box;
+  width: 100% !important;
+}
