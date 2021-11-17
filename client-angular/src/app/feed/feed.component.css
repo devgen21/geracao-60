@@ -48,11 +48,30 @@ nav {
 
 .editar{
   text-decoration: none;
-
+  color: rgb(255, 255, 255);
+  background-color: #3254fc;
+  border-radius: 2rem;
+  width: 250px;
+  padding: 0.5rem;
+  cursor: pointer;
+ 
+  transition: 600ms;
+}.editar:hover{
+  transition: 600ms;
+  background-color: #3254fca1;
 }
 
 .deletar{
   text-decoration: none;
-  color: red;
-  
+  color: rgb(255, 255, 255);
+  background-color: red;
+  border-radius: 2rem;
+  width: 250px;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 600ms;
+}.deletar:hover{
+  transition: 600ms;
+  background-color: rgba(255, 0, 0, 0.644);
 }

@@ -35,26 +35,6 @@
         aria-selected="true"
         >Todas Postagens</a
       >
-      <a
-        class="nav-link"
-        id="nav-profile-tab"
-        data-toggle="tab"
-        href="#nav-profile"
-        role="tab"
-        aria-controls="nav-profile"
-        aria-selected="false"
-        >Minhas Postagens</a
-      >
-      <a
-        class="nav-link"
-        id="nav-contact-tab"
-        data-toggle="tab"
-        href="#nav-contact"
-        role="tab"
-        aria-controls="nav-contact"
-        aria-selected="false"
-        >Postagens por tema</a
-      >
     </div>
   </nav>
 
@@ -71,7 +51,7 @@
             <h5 class="card-title">{{ item.title }}</h5>
             <img class="img-post" src="{{ item.image }}" alt="" />
             <div class="card-tex">
-              <p class="card-text  p-2">
+              <p class="card-text p-2">
                 {{ item.description }}
               </p>
             </div>
@@ -81,15 +61,20 @@
                 {{ item.data | date: "HH:mm" }}</small
               >
             </p>
-            <h5 style="font-size: 12px">Autor: {{ item.user.username }}</h5>
-            <hr />
+            <h5 style="font-size: 16px">Autor: {{ item.user.username }}</h5>
           </div>
-          <a class="editar mr-3 my-3" [routerLink]="['/edit-post', item.id]">
-            Editar
-          </a>
-          <a class="deletar mr-3 my-3" [routerLink]="['/delete-post', item.id]">
-            Apagar
-          </a>
+          <div class="container d-flex justify-content-center">
+            
+              <a class="editar mt-3" [routerLink]="['/edit-post', item.id]">
+                Editar
+              </a>
+            
+            
+              <a class="deletar mt-3" [routerLink]="['/delete-post', item.id]">
+                Apagar
+              </a>
+            
+          </div>
           <div style="height: 10px"></div>
         </div>
       </div>
