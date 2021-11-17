@@ -307,3 +307,10 @@
     .img-primary{
       background-size: contain !important;
     }
+
+    section .section2-title {
+      text-align: center;
+      color:#16171a;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+  }
