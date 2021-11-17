@@ -66,29 +66,33 @@
       aria-labelledby="nav-home-tab"
     >
       <div class="card-columns mt-4">
-        <div class="card text-center p-3" *ngFor='let item of listaPostagens'>
+        <div class="card text-center p-3" *ngFor="let item of listaPostagens">
           <div class="card-body">
-            <h5 class="card-title">{{item.title}}</h5>
-            <img class="img-post" src="{{item.image}}" alt="">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <img class="img-post" src="{{ item.image }}" alt="" />
             <p class="card-text">
-              {{item.description}}
+              {{ item.description }}
             </p>
             <p class="card-text">
-              <small class="text-muted"> {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small>
+              <small class="text-muted">
+                {{ item.data | date: "dd/MM/yyyy" }} às
+                {{ item.data | date: "HH:mm" }}</small
+              >
             </p>
+            <h5 class="card-title m-0">Autor: {{ item.user.username }}</h5>
           </div>
           <button
-          class="btn btn-info mr-3"
-          [routerLink]="['/edit-post', item.id ]"
-        >
-          Editar
-        </button>
-        <button
-          class="btn btn-danger"
-          [routerLink]="['/delete-post', item.id]"
-        >
-          Apagar
-        </button>
+            class="btn btn-info mr-3"
+            [routerLink]="['/edit-post', item.id]"
+          >
+            Editar
+          </button>
+          <button
+            class="btn btn-danger"
+            [routerLink]="['/delete-post', item.id]"
+          >
+            Apagar
+          </button>
         </div>
       </div>
     </div>

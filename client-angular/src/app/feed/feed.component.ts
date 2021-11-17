@@ -108,7 +108,7 @@ export class FeedComponent implements OnInit {
     this.postagem.theme = this.tema;
     this.user = this.authService.getSessionUser();
     console.log(this.user);
-    //this.user.id = environment.id;
+    this.user.id = environment.id;
     this.postagem.user = this.user;
     this.postService.postPostagem(this.postagem).subscribe(
       (resp: Post) => {
