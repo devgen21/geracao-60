@@ -18,6 +18,19 @@
   </div>
 </div>
 
+
+<div class="container d-flex align-middle" style="height: 50px">
+<div class="row">
+  <div class="col">
+    <strong> Temas:</strong>
+  </div>
+  <div class="col" *ngFor="let item of listaTemas">
+    {{item.title}}
+    </div>
+</div>
+</div>
+
+<!--  Cabeçalho de Postagens -->
 <div class="container">
   <nav>
     <div
@@ -38,6 +51,8 @@
     </div>
   </nav>
 
+
+<!-- POSTAGEMS -->
   <div class="tab-content" id="nav-tabContent">
     <div
       class="tab-pane fade show active"
@@ -55,6 +70,7 @@
                 {{ item.description }}
               </p>
             </div>
+  
             <p class="card-text">
               <small class="text-muted">
                 {{ item.data | date: "dd/MM/yyyy" }} às
@@ -176,7 +192,12 @@
         <button type="button" class="btn btn-danger" data-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-success" (click)="publicar()">
+        <button
+          type="button"
+          class="btn btn-success"
+          data-dismiss="modal"
+          (click)="publicar()"
+        >
           Publicar
         </button>
       </div>
