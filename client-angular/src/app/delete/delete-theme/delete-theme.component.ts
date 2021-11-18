@@ -26,7 +26,7 @@ export class DeleteThemeComponent implements OnInit {
 
     if (environment.token == '') {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/entrar']);
     }
 
     this.idTheme = this.route.snapshot.params['id'];

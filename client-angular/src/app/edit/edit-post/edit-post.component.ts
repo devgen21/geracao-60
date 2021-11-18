@@ -9,11 +9,10 @@ import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-edit-post',
   templateUrl: './edit-post.component.html',
-  styleUrls: ['./edit-post.component.css']
+  styleUrls: ['./edit-post.component.css'],
 })
 export class EditPostComponent implements OnInit {
   post: Post = new Post();
-
 
   constructor(
     private postService: PostService,
@@ -24,11 +23,12 @@ export class EditPostComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-
+    
     if (environment.token == '') {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
       this.router.navigate(['/feed']);
     }
+  
     let idPost = this.route.snapshot.params['id'];
     this.findAllPost(idPost);
   }
@@ -56,5 +56,4 @@ export class EditPostComponent implements OnInit {
       this.post = resp;
     });
   }
-
 }

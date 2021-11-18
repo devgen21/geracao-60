@@ -22,13 +22,13 @@ export class TemaComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-    /*
+    
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sessão expirada! Faça o login novamente!');
       this.load();
       this.router.navigate(['/entrar']);
     }
-     */
+    
     this.findAllThemes();
   }
 

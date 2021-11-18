@@ -24,12 +24,12 @@ export class DeletePostComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-
+ 
     if (environment.token == '') {
-      this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
-      this.router.navigate(['/login']);
+      this.alertas.showAlertInfo('Seu token expirou! ');
+      this.router.navigate(['/entrar']);
     }
-
+  
     this.idPost = this.route.snapshot.params['id'];
     this.findByIdPost(this.idPost);
   }

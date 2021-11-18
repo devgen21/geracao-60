@@ -28,3 +28,44 @@
   font-size: 2rem;
   background-color: var(--blue-primary);
 }
+
+
+
+
+
+
+
+.btn-success{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: #3254fc;
+  border-radius: 0.4rem;
+  width: 250px;
+  padding: 0.5rem;
+  cursor: pointer;
+ border: 0;
+  transition: 600ms;
+  height: 3rem;
+  font-weight: 500;
+}.btn-success:hover{
+  transition: 600ms;
+  background-color: #3254fca1;
+}
+
+.btn-danger{
+  height: 3rem;
+  border: 0;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  border-radius: 0.4rem;
+  width: 250px;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 600ms;
+}.btn-danger:hover{
+  transition: 600ms;
+  background-color: rgba(255, 0, 0, 0.644);
+}

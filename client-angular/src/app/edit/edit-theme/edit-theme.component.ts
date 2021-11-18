@@ -22,11 +22,12 @@ export class EditThemeComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-
+   
     if (environment.token == '') {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/entrar']);
     }
+   
     let idTema = this.route.snapshot.params['id'];
     this.findAllThemes(idTema);
   }
