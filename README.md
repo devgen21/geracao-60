@@ -8,4 +8,4 @@ Projeto desenvolvido durante o bootcamp da [Generation](https://brazil.generatio
 
 ## Documentation
 
-[![Run in Swagger](https://run.pstmn.io/button.svg)](https://gen60plus.herokuapp.com/)
+[![Run in Swagger]](https://gen60plus.herokuapp.com/)
