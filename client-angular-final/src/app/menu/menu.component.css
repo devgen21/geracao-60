@@ -1,0 +1,81 @@
+:root {
+  --blue-primary: #3254FC;
+  --yellow-primary: #FAE01E;
+  --orange-primary: #FF931D;
+}
+.fonte{
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem !important;
+  font-weight: 800;
+}
+.fundo{
+  background-color: var(--blue-primary) !important;
+}
+
+.btn-outline-success {
+  color: rgb(255, 255, 255) !important;
+  background-color: #e09214 !important;
+  border: #e09214 !important;
+  transition: 500ms !important;
+
+}
+
+.btn-outline-success:hover {
+  background-color: #e09214c0  !important;
+  
+}
+.navbar-brand{
+  color: #e09214  !important;
+  transition: 500ms !important;
+}
+.navbar-brand:hover{
+  transition: 500ms;
+  color: #e09214 !important;
+  background: -webkit-linear-gradient(#eee, #e0921477);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #e0921498;
+
+}
+.navbar-brand{
+  font-family: 'Michroma', sans-serif;
+}
+.nav-link {
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-link:hover{
+  color: #FFB761  !important;
+  transition: 500ms !important;
+}
+
+::placeholder{
+  color: #161615;
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.8rem !important;
+}
+
+.btn{
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.8rem !important;
+}
+
+.icon-menu{
+  color: white !important;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  transition: 600ms;
+}
+.icon-menu:hover{
+  transition: 600ms;
+  color: var(--orange-primary) !important;
+}
+.icon-sair{
+  cursor: pointer !important;
+}
+
+.nav-item{
+  text-decoration: none !important;
+  list-style: none !important;
+}

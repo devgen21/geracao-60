@@ -1,0 +1,122 @@
+:root {
+  --blue-primary: #3254fc;
+  --yellow-primary: #fae01e;
+  --orange-primary: #ff931d;
+}
+
+.nova-postagem {
+  color: #1129a3af;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem !important;
+  font-weight: 800;
+  border-color: var(--blue-primary);
+  transition: 580ms;
+}
+
+.nova-postagem:hover {
+  transition: 580ms;
+  border-color: var(--orange-primary);
+  background-color: transparent;
+}
+
+nav {
+  background-color: transparent !important;
+}
+
+.img-post {
+  background-clip: content-box;
+  width: 100% !important;
+  border-radius: 2px;
+}
+
+.card-tex {
+  text-align: justify;
+  text-justify: distribute !important;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1129a3af;
+
+  font-family: "Raleway", sans-serif;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.editar {
+  text-align: center;
+  width: 200px !important;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: #3254fc;
+  border-radius: 0.3rem;
+
+  padding: 0.5rem;
+  cursor: pointer;
+
+  transition: 600ms;
+}
+.editar:hover {
+  transition: 600ms;
+  background-color: #3254fca1;
+}
+
+.deletar {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  border-radius: 0.3rem;
+  text-align: center;
+  width: 200px !important;
+
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 600ms;
+}
+.deletar:hover {
+  transition: 600ms;
+  background-color: rgba(255, 0, 0, 0.644);
+}
+
+.btn-success {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: #3254fc;
+  border-radius: 0.4rem;
+
+  padding: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  transition: 600ms;
+  height: 3rem;
+  margin: 0 !important;
+  font-weight: 500;
+}
+.btn-success:hover {
+  transition: 600ms;
+  background-color: #3254fca1;
+}
+
+.btn-danger {
+  margin: 0 !important;
+  height: 3rem;
+  border: 0;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  border-radius: 0.4rem;
+
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 600ms;
+}
+.btn-danger:hover {
+  transition: 600ms;
+  background-color: rgba(255, 0, 0, 0.644);
+}

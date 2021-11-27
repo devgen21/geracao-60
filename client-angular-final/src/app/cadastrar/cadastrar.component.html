@@ -1,0 +1,58 @@
+<app-menu-default></app-menu-default>
+<div style="height: 50px"></div>
+<!--Forms-->
+<div style="display: flex; justify-content: center; width: 100%">
+  <form action="#" style="margin-top: 50px; padding: 5px; border-radius: 5px">
+    <h1 style="text-align: center"><strong>Cadastre seu usuário </strong></h1>
+    <!--Fist Name-->
+    <label class="label-name" style="font-size: 22px" for="username"
+      >Nome de usuário</label
+    >
+    <input
+      [(ngModel)]="user.username"
+      class="form-control"
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Digite seu nome de usuário"
+    />
+    <div id="textFname"></div>
+
+    <!--Avatar-->
+    <label class="label-name" for="avatar">Foto de perfil</label>
+    <input
+      class="form-control"
+      type="text"
+      name="avatar"
+      id="avatar"
+      placeholder="Link da foto"
+      [(ngModel)]="user.avatar"
+    />
+    <div id="textFname"></div>
+
+    <!--Assunto-->
+    <label style="font-size: 22px" for="password">Senha </label>
+
+    <input
+      [(ngModel)]="user.password"
+      class="form-control"
+      type="password"
+      id="password"
+      name="password"
+      placeholder="******************"
+    />
+
+    <br /><br />
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn shadow" (click)="signUp()">
+        Cadastrar
+      </button>
+    </div>
+    <h6 style="text-align: center">
+      Ja possui cadastro? <a href="/entrar">Entre aqui</a>
+    </h6>
+  </form>
+</div>
+
+<div style="height: 250px"></div>
+<app-rodape-default></app-rodape-default>
