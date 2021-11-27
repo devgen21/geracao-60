@@ -1,8 +1,10 @@
 export const environment = {
   production: true,
   token: '',
+
+  avatarUser: '',
   username: '',
-  email: '',
-  id: 0,
-  server: 'http://localhost:8080'
+
+  idUser: 0,
+  server: 'https://gen60plus-api-2.herokuapp.com',
 };

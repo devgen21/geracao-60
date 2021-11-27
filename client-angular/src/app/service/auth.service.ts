@@ -39,6 +39,21 @@ export class AuthService {
     return this.http.put<User>(`${environment.server}/user`, user, this.token);
   }
 
+  logado() {
+    let ok: boolean = false;
+
+    if (environment.token != '') {
+      ok = true;
+    }
+    if (ok == false) {
+      alert('Sua sessão expirou!');
+      this.router.navigate(['/entrar']);
+    }
+    return ok;
+  }
+  canActivate(): boolean {
+    return this.logado();
+  }
   getSessionUser(): User {
     return JSON.parse(localStorage.getItem('user') || '{}');
   }

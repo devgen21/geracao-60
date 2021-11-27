@@ -29,11 +29,11 @@ export class EntrarComponent implements OnInit {
       (resp: UserLogin) => {
         this.userLogin = resp;
         environment.token = this.userLogin.token;
+        environment.avatarUser = this.userLogin.avatar;
         environment.username = this.userLogin.username;
-        environment.email = this.userLogin.email;
-        environment.id = this.userLogin.id;
+        environment.idUser = this.userLogin.id;
         //TODO: Atualizado
-        localStorage.setItem('user', JSON.stringify(this.userLogin));
+        localStorage.setItem('token', this.userLogin.token);
 
         this.alertas.showAlertLoad('Bem vindo(a)!');
         this.router.navigate(['/feed']);

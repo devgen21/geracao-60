@@ -3,13 +3,11 @@
 <!--Forms-->
 <div style="display: flex; justify-content: center; width: 100%">
   <form action="#" style="margin-top: 50px; padding: 5px; border-radius: 5px">
-    <h1 style="text-align: center"><strong>Cadastre seu usuário
-    </strong> </h1>
+    <h1 style="text-align: center"><strong>Cadastre seu usuário </strong></h1>
     <!--Fist Name-->
     <label class="label-name" style="font-size: 22px" for="username"
       >Nome de usuário</label
     >
-   
     <input
       [(ngModel)]="user.username"
       class="form-control"
@@ -19,24 +17,22 @@
       placeholder="Digite seu nome de usuário"
     />
     <div id="textFname"></div>
-   
-    <!--Ultimo nome-->
-    <label style="font-size: 22px; margin-top: 5px" for="email">Email </label>
-   
+
+    <!--Avatar-->
+    <label class="label-name" for="avatar">Foto de perfil</label>
     <input
-      [(ngModel)]="user.email"
       class="form-control"
       type="text"
-      id="email"
-      name="email"
-      placeholder="Ex: email@email.com.br"
+      name="avatar"
+      id="avatar"
+      placeholder="Link da foto"
+      [(ngModel)]="user.avatar"
     />
-    <div id="textLname"></div>
-   
+    <div id="textFname"></div>
 
     <!--Assunto-->
-    <label style="font-size: 22px;" for="password">Senha </label>
-   
+    <label style="font-size: 22px" for="password">Senha </label>
+
     <input
       [(ngModel)]="user.password"
       class="form-control"
@@ -46,7 +42,7 @@
       placeholder="******************"
     />
 
-   <br><br>
+    <br /><br />
     <div class="d-flex justify-content-center">
       <button type="submit" class="btn shadow" (click)="signUp()">
         Cadastrar
@@ -58,6 +54,5 @@
   </form>
 </div>
 
-<div style="height: 250px;"></div>
+<div style="height: 250px"></div>
 <app-rodape-default></app-rodape-default>
-

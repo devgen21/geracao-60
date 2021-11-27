@@ -17,7 +17,7 @@ import { TemaService } from '../service/tema.service';
 export class FeedComponent implements OnInit {
   //Temas
   tema: Theme = new Theme();
-  listaTemas: Theme[];
+  listaTemas: Theme[] = [];
   idTema: number;
   nomeTema: string = '';
 
@@ -30,7 +30,7 @@ export class FeedComponent implements OnInit {
   user: User = new User();
 
   //Autenticação
-  idUserLogado = environment.id;
+  idUserLogado = environment.idUser;
   nomeUserLogado = environment.username;
 
   key = 'data';
@@ -47,40 +47,41 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
- 
+
     if (environment.token == '') {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente. ');
       this.router.navigate(['/entrar']);
     }
-
-    //Lista todos temas
-    this.findAllTemas();
     //Lista todas Postagens
     this.findAllPostagens();
+    //Lista todos temas
+    this.findAllTemas();
     //Lista todos Usuários
     this.findByIdUser();
   }
 
-
-  findByTituloPostagem(){
-    if(this.tituloPost == ''){
-      this.findAllPostagens()
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
+      this.findAllPostagens();
     } else {
-      this.postService.getByNomePostagem(this.tituloPost).subscribe((resp: Post[])=>{
-        this.listaPostagens = resp
-      })
+      this.postService
+        .getByNomePostagem(this.tituloPost)
+        .subscribe((resp: Post[]) => {
+          this.listaPostagens = resp;
+        });
     }
-
   }
 
   findByNomeTema() {
-    console.log(this.nomeTema)
+    console.log(this.nomeTema);
     if (this.nomeTema == '') {
-      this.findAllTemas()
+      this.findAllTemas();
     } else {
-      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Theme[]) => {
-        this.listaTemas = resp
-      })
+      this.temaService
+        .getByNomeTema(this.nomeTema)
+        .subscribe((resp: Theme[]) => {
+          this.listaTemas = resp;
+        });
     }
   }
 
@@ -109,24 +110,24 @@ export class FeedComponent implements OnInit {
   }
 
   findByIdUser() {
-    this.authService.getByIdUser(environment.id).subscribe((resp: User) => {
+    this.authService.getByIdUser(environment.idUser).subscribe((resp: User) => {
       this.user = resp;
     });
   }
 
-  publicar() {
+ public publicar() {
     this.tema.id = this.idTema;
     this.postagem.theme = this.tema;
     this.user = this.authService.getSessionUser();
     console.log(this.user);
-    this.user.id = environment.id;
+    this.user.id = environment.idUser;
     this.postagem.user = this.user;
     this.postService.postPostagem(this.postagem).subscribe(
       (resp: Post) => {
         this.postagem = resp;
         this.alertas.showAlertSuccess('Postagem realizada com sucesso!');
         this.findAllPostagens();
-        //this.findByIdUser();
+        this.findByIdUser();
         this.findAllTemas();
         this.postagem = new Post();
       },

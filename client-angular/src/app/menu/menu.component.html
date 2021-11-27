@@ -2,37 +2,23 @@
 <nav class="navbar navbar-expand-lg fundo Regular shadow">
   <div class="container">
     <!--Logo-->
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item"></li>
+    <ul class="navbar-nav">
       <li class="nav-item">
-        <p class="text-white mb-1 fonte" style="word-spacing: 5px">
-          Olá, {{ username }}
+        <p class="nav-link text-white mb-1 mt-2" style="word-spacing: 5px">
+          Olá, <strong>{{ username }}</strong>
         </p>
       </li>
     </ul>
 
     <div style="width: 200px"></div>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
     <!--Menu-->
-    <div class="d-flex">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-
-      <ul class="navbar-nav mr-auto mb-2 mb-lg-0"></ul>
-      <li class="nav-item ms-4">
-        <p class="fonte text-white mb-1">Sair</p>
-      </li>
-
-      <a (click)="sair()" class="nav-link fs-4 icon-sair" aria-current="page">
+    <ul class="navbar-nav d-flex">
+      <a
+        (click)="sair()"
+        class="nav-link fs-4 icon-sair text-white p-1"
+        aria-current="page"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -50,7 +36,8 @@
             d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"
           />
         </svg>
+        Sair
       </a>
-    </div>
+    </ul>
   </div>
 </nav>

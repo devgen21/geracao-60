@@ -17,19 +17,21 @@
     </div>
   </div>
 </div>
-
-<div style="height: 20px;"></div>
+<!--  Temas -->
+<div style="height: 20px"></div>
 <div class="container d-flex align-middle" style="height: 50px">
-<div class="row">
-  <div class="col">
-    <strong> Temas:</strong>
-  </div>
-  <div class="col" *ngFor="let item of listaTemas">
-    {{item.title}}
+  <div class="row">
+    <div class="col">
+      <strong> Temas:</strong>
     </div>
+    <div class="col" *ngFor="let item of listaTemas">
+      {{ item.title }}
+    </div>
+  </div>
 </div>
-</div>
-<div style="height: 50px;"></div>
+
+<div style="height: 50px"></div>
+
 <!--  Cabeçalho de Postagens -->
 <div class="container">
   <nav>
@@ -40,69 +42,109 @@
     >
       <a
         class="nav-link active"
-        id="nav-home-tab"
         data-toggle="tab"
-        href="#nav-home"
-        role="tab"
-        aria-controls="nav-home"
+        id="todasPostagens-tab"
+        href="#todas-postagens"
+        role="tabpanel"
+        aria-controls="todasPostagens"
         aria-selected="true"
         >Todas Postagens</a
       >
+      <a
+        class="nav-link"
+        data-toggle="tab"
+        href="#postagens-tema"
+        id="postagemPorTema-tab"
+        role="tab"
+        aria-controls="tema"
+        aria-selected="true"
+        >Postagens por Tema
+      </a>
     </div>
   </nav>
 
+  <div style="height: 50px"></div>
 
-<!-- POSTAGEMS -->
   <div class="tab-content" id="nav-tabContent">
     <div
       class="tab-pane fade show active"
-      id="nav-home"
+      id="#todas-postagens"
       role="tabpanel"
       aria-labelledby="nav-home-tab"
     >
-      <div class="card-columns mt-4">
-        <div class="card text-center pt-3" *ngFor="let item of listaPostagens">
-          <div class="card-body container">
-            <h5 class="card-title">{{ item.title }}</h5>
-            <img class="img-post" src="{{ item.image }}" alt="" />
-            <div class="card-tex">
-              <p class="card-text p-2">
-                {{ item.description }}
-              </p>
+      <div class="row d-flex justify-content-center">
+        <div class="col-12">
+          <div
+            class="card rounded mb-5"
+            *ngFor="let postagem of listaPostagens | orderBy: key:reverse"
+          >
+            <div
+              class="
+                card-header
+                text-center
+                nav nav-tabs
+                d-flex
+                justify-content-center
+              "
+            >
+              <div class="row">
+                <div class="col-1 p-0 d-flex justify-content-center">
+                  <img
+                    class="rounded-circle"
+                    src="{{ postagem?.user?.avatar }}"
+                    width="50px"
+                    height="50px"
+                  />
+                </div>
+                <div class="col-11 p-0">
+                  <h5 class="card-title m-0">
+                    {{ postagem?.user?.username }}
+                  </h5>
+                  
+                <small class="text-muted">
+                  {{ postagem.data | date: "dd/MM/yyyy" }} às
+                  {{ postagem.data | date: "HH:mm" }}</small
+                >
+                </div>
+              </div>
             </div>
-  
-            <p class="card-text">
-              <small class="text-muted">
-                {{ item.data | date: "dd/MM/yyyy" }} às
-                {{ item.data | date: "HH:mm" }}</small
+            <div class="card-body text-center">
+              <img class="img-post" src="{{ postagem.image }}" alt="" />
+              <h6 class="card-title m-0">{{ postagem.title }}</h6>
+              <p class="card-text mt-3">{{ postagem.description }}</p>
+              <small class="text-muted"
+                >Tema: {{ postagem?.theme?.title }}</small
               >
-            </p>
-            <h5 style="font-size: 16px">Autor: {{ item.user.username }}</h5>
-          </div>
-          <div class="container d-flex justify-content-center">
-            
-              <a class="editar mt-3" [routerLink]="['/edit-post', item.id]">
+            </div>
+            <div class="container d-flex justify-content-center m-3">
+              <a
+                class="editar mt-3 mx-1"
+                [routerLink]="['/edit-post', postagem.id]"
+              >
                 Editar
               </a>
-            
-            
-              <a class="deletar mt-3" [routerLink]="['/delete-post', item.id]">
+
+              <a
+                class="deletar mt-3 mx-1"
+                [routerLink]="['/delete-post', postagem.id]"
+              >
                 Apagar
               </a>
-            
+            </div>
           </div>
-          <div style="height: 10px"></div>
         </div>
       </div>
     </div>
+
     <div
       class="tab-pane fade"
-      id="nav-profile"
+      id="postagens-tema"
       role="tabpanel"
-      aria-labelledby="nav-profile-tab"
+      aria-labelledby="postagemPorTema-tab"
     >
       2
     </div>
+
     <div
       class="tab-pane fade"
       id="nav-contact"
@@ -182,8 +224,8 @@
             [(ngModel)]="idTema"
             (change)="(findAllTemas)"
           >
-            <option *ngFor="let item of listaTemas" value="{{ item.id }}">
-              {{ item.title }}
+            <option *ngFor="let item of listaTemas" value="{{ item?.id }}">
+              {{ item?.title }}
             </option>
           </select>
         </div>
@@ -192,7 +234,7 @@
         <button type="button" class="btn btn-danger w-100" data-dismiss="modal">
           Cancelar
         </button>
-        <div style="width: 5px; height: 5px;"></div>
+        <div style="width: 5px; height: 5px"></div>
         <button
           type="button"
           class="btn btn-success w-100"
