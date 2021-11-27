@@ -1,6 +1,7 @@
 ## Rede social - Gen60+
 
 ![Background](https://repository-images.githubusercontent.com/409678693/0e7be3b0-e2a9-43e6-85b1-596c9a0e62b4)
+<br><br><br>
 Projeto desenvolvido durante o bootcamp da [Generation](https://brazil.generation.org/).<br><br>
 
 <strong>Front-End</strong>
