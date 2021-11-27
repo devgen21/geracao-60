@@ -1,0 +1,33 @@
+<div class="container mb-5 mt-5">
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h1 class="text-center text-dark">Apagar Postagem</h1>
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <h4 class="text-center text-secondary">
+          Você tem certeza que deseja apagar esse Postagem? 
+        </h4>
+      </div>
+    </div>
+  
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-4">
+        <h5 class="text-center text-danger">Postagem: {{ post.title }}</h5>
+      </div>
+    </div>
+  
+    <div class="row mt-5">
+      <div class="col-md-12 d-flex justify-content-center">
+        <button class="btn btn-danger mr-4 w-100" routerLink="/feed">Não</button>
+        <button class="btn btn-success w-100" (click)="apagar()">Sim</button>
+      </div>
+    </div>
+    <div style="height: 100px;"></div>
+    <div class="containter text-center">
+      <img class="rounded-circle img-fluid " width="400px" src="https://www.oclick.com.br/painel/conteudo/dados/2018/Janeiro/capa.jpg?1516582486349"  alt="...">
+    </div>
+  </div>
+  
