@@ -4,8 +4,10 @@ Projeto desenvolvido durante o bootcamp da [Generation](https://brazil.generatio
 
 ## Front-End
 
-[Netlify](https://gen60plus.netlify.app/)
+[Run in Netlify](https://gen60plus.netlify.app/)
 
-## Documentation
+---
 
-[![Run in Swagger]](https://gen60plus.herokuapp.com/)
+## Back-End
+
+[Run in Swagger](https://gen60plus.herokuapp.com/)
