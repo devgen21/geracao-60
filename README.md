@@ -2,12 +2,12 @@
 
 Projeto desenvolvido durante o bootcamp da [Generation](https://brazil.generation.org/).<br><br>
 
-## Front-End
+<strong>Front-End</strong>
 
 [Run in Netlify](https://gen60plus.netlify.app/)
 
 ---
 
-## Back-End
+Back-End
 
 [Run in Swagger](https://gen60plus.herokuapp.com/)
