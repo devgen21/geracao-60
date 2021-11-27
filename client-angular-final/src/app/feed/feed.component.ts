@@ -47,11 +47,12 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-
+/* 
     if (environment.token == '') {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente. ');
       this.router.navigate(['/entrar']);
     }
+    */
     //Lista todas Postagens
     this.findAllPostagens();
     //Lista todos temas
@@ -115,7 +116,7 @@ export class FeedComponent implements OnInit {
     });
   }
 
- public publicar() {
+  public publicar() {
     this.tema.id = this.idTema;
     this.postagem.theme = this.tema;
     this.user = this.authService.getSessionUser();
