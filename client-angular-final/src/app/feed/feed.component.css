@@ -136,4 +136,18 @@ nav {
   .container-postagens{
     margin-left: 0rem;
   }
+  .list-group-item{
+    padding: 1rem !important;
+    width: 100% !important;
+  }
+}
+
+
+.list-group-item{
+  padding: 1rem !important;
+  width: 225px;
+}
+
+.list-group{
+  padding: 0.2rem !important;
 }
