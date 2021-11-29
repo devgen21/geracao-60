@@ -53,6 +53,7 @@ export class FeedComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
     
+    
     //Lista todas Postagens
     this.findAllPostagens();
     //Lista todos temas

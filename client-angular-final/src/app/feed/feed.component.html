@@ -3,10 +3,9 @@
 <div class="container">
   <!--Cabeçalho-->
   <div class="container-fluid mt-4">
-    <div class="row nav-c d-flex align-items-center">
-      <div class="col-12 text-center">
-        <div class="row d-flex justify-content-center mt-3">
-          <div class="col-md-6">
+    <div class="row nav-c d-flex align-items-end">
+      <div class="col-12 text-end">
+        
             <button
               data-toggle="modal"
               data-target="#novaPostagem"
@@ -14,8 +13,7 @@
             >
               Nova Postagem
             </button>
-          </div>
-        </div>
+         
       </div>
     </div>
   </div>
@@ -146,20 +144,33 @@
       <div class="container-postagens col-lg-6 col-sm col-md ">
         <nav>
           <div
-            class="nav nav-tabs d-flex justify-content-center"
-            id="nav-tab"
+            class="nav  d-flex justify-content-center "
+            id="nav-tab nav-feed"
             role="tablist"
           >
-            <a
-              class="nav-link"
-              data-toggle="tab"
-              id="todasPostagens-tab"
-              href="#todas-postagens"
-              role="tabpanel"
-              aria-controls="todasPostagens"
-              aria-selected="true"
-              >Postagens</a
-            >
+
+          <a
+          class="nav-link nav-feed mx-2 active"
+          data-toggle="tab"
+          id="todas-tab"
+          href="#todas"
+          role="tabpanel"
+          aria-controls="todas"
+          aria-selected="true"
+          >Todas</a
+        >
+
+                   
+        <a
+        class="nav-link nav-feed"
+        data-toggle="tab"
+        id="minhas-postagens-tab"
+        href="#minhas-postagens"
+        role="tabpanel"
+        aria-controls="minhas-postagens"
+        aria-selected="true"
+        >Minhas Postagens</a
+      >
           </div>
         </nav>
         <!--  Cabeçalho de Postagens -->
@@ -171,7 +182,7 @@
             class="tab-pane fade show active"
             id="#todas-postagens"
             role="tabpanel"
-            aria-labelledby="nav-home-tab"
+            aria-labelledby="todas-postagens-tab"
           >
             <div class="row d-flex justify-content-center">
           
@@ -213,46 +224,140 @@
                     <img class="img-post" src="{{ postagem.image }}" alt="" />
                     <h6 class="card-title m-0 pt-2">{{ postagem.title }}</h6>
                     <p class="card-text mt-3 text-justify p-4">{{ postagem.description }}</p>
-                    <small class="text-muted"
+                    <small class="text-muted m-4"
                       >Tema: {{ postagem?.theme?.title }}</small
                     >
-                  </div>
-                  <div class="container d-flex justify-content-center m-3">
-                    <a
-                      class="editar mt-3 mx-1"
-                      [routerLink]="['/edit-post', postagem.id]"
-                    >
-                      Editar
-                    </a>
-
-                    <a
-                      class="deletar mt-3 mx-1"
-                      [routerLink]="['/delete-post', postagem.id]"
-                    >
-                      Apagar
-                    </a>
                   </div>
                 </div>
               
             </div>
           </div>
 
+          <!-- Minhas postagens -->
           <div
             class="tab-pane fade"
-            id="postagens-tema"
+            id="minhas-postagens"
             role="tabpanel"
-            aria-labelledby="postagemPorTema-tab"
+            aria-labelledby="minhas-postagens-tab"
           >
-            2
+          <div class="row d-flex justify-content-center">
+          
+            <div
+              class="card rounded mb-5"
+              *ngFor="let postUser of user.post | orderBy: key:reverse"
+            >
+              <div
+                class="
+                  card-header
+                  text-center
+                  nav nav-tabs
+                  d-flex
+                  justify-content-center
+                "
+              >
+                <div class="row">
+                  <div class="col-1 p-0 d-flex justify-content-center">
+                    <img
+                      class="rounded-circle"
+                      src="{{ postUser?.avatar }}"
+                      width="50px"
+                      height="50px"
+                    />
+                  </div>
+                  <div class="col-11 p-0">
+                    <h5 class="card-title m-0">
+                      {{ postUser.username }}
+                    </h5>
+
+                    <small class="text-muted">
+                      {{ postUser.data | date: "dd/MM/yyyy" }} às
+                      {{ postUser.data | date: "HH:mm" }}</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center ">
+                <img class="img-post" src="{{ postUser.image }}" alt="" />
+                <h6 class="card-title m-0 pt-2">{{ postUser.title }}</h6>
+                <p class="card-text mt-3 text-justify p-4">{{ postUser.description }}</p>
+                <small class="text-muted m-4"
+                  >Tema: {{ postUser?.theme?.title }}</small
+                >
+              </div>
+              <div class="container d-flex justify-content-center m-3">
+                <a
+                  class="editar mt-3 mx-1"
+                  [routerLink]="['/edit-post', postUser.id]"
+                >
+                  Editar
+                </a>
+
+                <a
+                  class="deletar mt-3 mx-1"
+                  [routerLink]="['/delete-post', postUser.id]"
+                >
+                  Apagar
+                </a>
+              </div>
+            </div>
+          
+        </div>
           </div>
 
+          <!--Todas-->
           <div
             class="tab-pane fade"
-            id="nav-contact"
+            id="todas"
             role="tabpanel"
-            aria-labelledby="nav-contact-tab"
+            aria-labelledby="todas-tab"
           >
-            3
+          <div class="row d-flex justify-content-center">
+          
+            <div
+              class="card rounded mb-5"
+              *ngFor="let postagem of listaPostagens | orderBy: key:reverse"
+            >
+              <div
+                class="
+                  card-header
+                  text-center
+                  nav nav-tabs
+                  d-flex
+                  justify-content-center
+                "
+              >
+                <div class="row">
+                  <div class="col-1 p-0 d-flex justify-content-center">
+                    <img
+                      class="rounded-circle"
+                      src="{{ postagem?.user.avatar }}"
+                      width="50px"
+                      height="50px"
+                    />
+                  </div>
+                  <div class="col-11 p-0">
+                    <h5 class="card-title m-0">
+                      {{ postagem.user.username }}
+                    </h5>
+
+                    <small class="text-muted">
+                      {{ postagem.data | date: "dd/MM/yyyy" }} às
+                      {{ postagem.data | date: "HH:mm" }}</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center ">
+                <img class="img-post" src="{{ postagem.image }}" alt="" />
+                <h6 class="card-title m-0 pt-2">{{ postagem.title }}</h6>
+                <p class="card-text mt-3 text-justify p-4">{{ postagem.description }}</p>
+                <small class="text-muted m-4"
+                  >Tema: {{ postagem?.theme?.title }}</small
+                >
+              </div>
+            </div>
+          
+        </div>
           </div>
         </div>
       </div>
